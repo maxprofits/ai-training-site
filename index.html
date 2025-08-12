@@ -8,11 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg:#0b1324; --fg:#0e1726; --card:#111a2e; --muted:#93a0b8; --text:#e6ecfa;
-      --brand:#3b82f6; --brand-2:#22d3ee; --accent:#10b981; --danger:#ef4444;
-      --shadow:0 20px 40px rgba(0,0,0,.35); --radius:18px; --container:1200px;
-    }
+    :root{--bg:#0b1324;--fg:#0e1726;--card:#111a2e;--muted:#93a0b8;--text:#e6ecfa;--brand:#3b82f6;--brand-2:#22d3ee;--accent:#10b981;--danger:#ef4444;--shadow:0 20px 40px rgba(0,0,0,.35);--radius:18px;--container:1200px}
     *{box-sizing:border-box}
     html,body{height:100%}
     body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:linear-gradient(180deg,#0a1226 0%,#0d1630 55%,#0e1a38 100%);color:var(--text);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
@@ -56,13 +52,19 @@
     .row{display:grid;gap:12px;grid-template-columns:1fr 1fr}
     .drawer footer{padding:16px 18px;border-top:1px solid rgba(255,255,255,.08);display:flex;gap:10px}
     .btn-whatsapp{background:linear-gradient(90deg,#25D366,#128C7E);color:#03110b;box-shadow:0 10px 24px rgba(18,140,126,.35)}
-    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,.15);color:var(--text)}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,.15);color:#var(--text)}
     .close{background:transparent;border:0;color:#bcd0ff;cursor:pointer;font-size:18px}
     .toast{position:fixed;right:14px;bottom:14px;background:#102040;border:1px solid rgba(255,255,255,.1);color:#dfe8ff;padding:12px 14px;border-radius:12px;box-shadow:var(--shadow);opacity:0;transform:translateY(10px);transition:.25s ease;z-index:120}
     .toast.show{opacity:1;transform:translateY(0)}
-    footer.site{padding:30px 0;border-top:1px solid rgba(255,255,255,.08);color:#9fb0d7}
-    @media (max-width:920px){.hero .wrap{grid-template-columns:1fr;padding:64px 0}.grid-3{grid-template-columns:1fr}.nav .desktop{display:none}}
     .toast{pointer-events:none}
+
+    /* AI background behind hero text */
+    .hero-copy{position:relative;isolation:isolate;padding:24px 22px 18px;border-radius:20px;border:1px solid rgba(255,255,255,.06);background:
+      radial-gradient(120% 120% at 8% 0%, rgba(59,130,246,.18), transparent 60%),
+      radial-gradient(120% 120% at 92% 60%, rgba(34,211,238,.16), transparent 65%),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 420'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%233b82f6' stop-opacity='.55'/><stop offset='1' stop-color='%2322d3ee' stop-opacity='.45'/></linearGradient></defs><g fill='none' stroke='url(%23g)' stroke-width='1.4' opacity='.8'><path d='M40 300 L170 240 L300 280 L430 210 L560 240 L690 180 L820 210 L950 170 L1080 200'/><path d='M40 250 L170 190 L300 230 L430 160 L560 200 L690 150 L820 180 L950 140 L1080 170'/></g><g fill='%23a5b4fc' opacity='.35'><circle cx='170' cy='240' r='4'/><circle cx='300' cy='280' r='4'/><circle cx='430' cy='210' r='4'/><circle cx='560' cy='240' r='4'/><circle cx='690' cy='180' r='4'/><circle cx='820' cy='210' r='4'/><circle cx='950' cy='170' r='4'/></g></svg>");
+      background-repeat:no-repeat;background-size:cover;background-position:center top;box-shadow:inset 0 0 0 9999px rgba(11,19,36,.18)}
+    .hero-copy h1{margin-top:6px}
   </style>
 </head>
 <body>
@@ -85,7 +87,7 @@
   <section class="hero">
     <div class="hero-grid"></div>
     <div class="container wrap">
-      <div>
+      <div class="hero-copy">
         <h1>Modern, flexible, locally‑led AI training.</h1>
         <p class="lead">Build in‑demand skills (Machine Learning, Deep Learning, NLP) and learn <strong>AI video creation</strong> & <strong>AI character creation</strong> to monetize on social media in Cameroon.</p>
         <div class="cta">
@@ -126,7 +128,7 @@
         <article class="card program-card" data-course="AI Video Creation (UGC & Reels)" data-price="40000">
           <h3>AI Video Creation (UGC & Reels)</h3>
           <p class="muted">1 month · CapCut AI, Runway/Motion, prompting, TikTok/Reels/Shorts workflows, template pack.</p>
-          <span class="badge" style="background:rgba(59,130,246,.18); color:#d9e8ff; border-color:rgba(59,130,246,.35)">Monetization</span>
+          <span class="badge" style="background:rgba(59,130,246,.18);color:#d9e8ff;border-color:rgba(59,130,246,.35)">Monetization</span>
           <footer>
             <span class="price">40,000 FCFA</span>
             <button class="btn btn-primary btn-buy">Buy</button>
@@ -135,7 +137,7 @@
         <article class="card program-card" data-course="AI Character Creation (Avatars/VTuber)" data-price="80000">
           <h3>AI Character Creation (Avatars/VTuber)</h3>
           <p class="muted">2 months · AI avatars, voice/cloning, lip‑sync, OBS/live, scripts & sales funnels.</p>
-          <span class="badge" style="background:rgba(16,185,129,.18); color:#caffe8f; border-color:rgba(16,185,129,.35)">Monetization</span>
+          <span class="badge" style="background:rgba(16,185,129,.18);color:#caffe8f;border-color:rgba(16,185,129,.35)">Monetization</span>
           <footer>
             <span class="price">80,000 FCFA</span>
             <button class="btn btn-primary btn-buy">Buy</button>
@@ -301,7 +303,7 @@
     qs('#drawerCancel').onclick = closeDrawer;
     overlay.addEventListener('click', closeDrawer);
 
-    // Send WhatsApp
+    // Send WhatsApp (with robust fallbacks for popup blockers)
     qs('#sendWA').addEventListener('click', ()=>{
       if(!WHATSAPP_NUMBER || !/^\d{9,15}$/.test(WHATSAPP_NUMBER)){
         alert('Please configure your WhatsApp number (WHATSAPP_NUMBER)');
@@ -327,6 +329,7 @@
       try { const w = window.open(url1, '_blank'); opened = !!w; } catch(e) {}
       if(!opened){ try { window.location.href = url1; opened = true; } catch(e) {} }
       if(!opened){ window.location.href = url2; }
+
       toast.classList.add('show'); setTimeout(()=>toast.classList.remove('show'), 3200); closeDrawer();
     });
 
