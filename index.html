@@ -1,110 +1,312 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="AI Training Cameroon – Learn artificial intelligence and machine learning skills online.">
-  <title>AI Training Cameroon</title>
-  <link rel="stylesheet" href="assets/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Training Cameroon – Programs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b1324; --fg:#0e1726; --card:#111a2e; --muted:#93a0b8; --text:#e6ecfa;
+      --brand:#3b82f6; --brand-2:#22d3ee; --accent:#10b981; --danger:#ef4444;
+      --shadow:0 20px 40px rgba(0,0,0,.35); --radius:18px; --container:1200px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:linear-gradient(180deg,#0a1226 0%,#0d1630 55%,#0e1a38 100%);color:var(--text);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    .container{max-width:var(--container);margin-inline:auto;padding-inline:20px}
+    header{position:sticky;top:0;z-index:50;backdrop-filter:saturate(1.2) blur(8px);background:rgba(10,18,38,.55);border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:68px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.3px}
+    .brand .logo{width:38px;height:38px;border-radius:10px;background:radial-gradient(circle at 30% 30%,var(--brand) 0,var(--brand-2) 60%,transparent 62%),linear-gradient(135deg,rgba(255,255,255,.2),rgba(255,255,255,0) 60%);box-shadow:0 6px 20px rgba(34,211,238,.35)}
+    nav ul{display:flex;gap:22px;list-style:none;padding:0;margin:0}
+    nav a{color:var(--text);text-decoration:none;font-weight:500;opacity:.92}
+    nav a:hover{opacity:1}
+    .btn{appearance:none;border:0;cursor:pointer;font-weight:600;padding:12px 18px;border-radius:12px}
+    .btn-primary{background:linear-gradient(90deg,var(--brand),var(--brand-2));color:#091021;box-shadow:0 10px 24px rgba(59,130,246,.35)}
+    .btn-outline{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,.15)}
+    .hero{position:relative;overflow:hidden}
+    .hero::before{content:"";position:absolute;inset:-40% -10% auto -10%;height:80vh;min-height:420px;background:radial-gradient(60% 60% at 60% 40%,rgba(59,130,246,.28),transparent 60%),radial-gradient(50% 50% at 40% 60%,rgba(34,211,238,.23),transparent 62%);filter:blur(22px);pointer-events:none}
+    .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:46px 46px;mask-image:linear-gradient(to bottom,rgba(0,0,0,.6),rgba(0,0,0,0));pointer-events:none}
+    .hero .wrap{display:grid;grid-template-columns:1.15fr 1fr;align-items:center;gap:38px;padding:84px 0}
+    h1{font-size:clamp(32px,3.5vw,52px);line-height:1.05;margin:0 0 12px;font-weight:800}
+    p.lead{font-size:clamp(16px,1.5vw,20px);color:var(--muted);margin:0 0 26px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap}
+    .statbar{display:flex;gap:18px;flex-wrap:wrap;margin-top:28px}
+    .pill{border:1px solid rgba(255,255,255,.12);padding:10px 14px;border-radius:999px;color:#bcd0ff;font-size:14px}
+    section{padding:64px 0}
+    h2{font-size:clamp(26px,2.4vw,36px);margin:0 0 22px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+    .card h3{margin:0 0 10px}.muted{color:var(--muted)}
+    .program-card .price{font-weight:800;font-size:22px;color:#d6f9ff}
+    .program-card .badge{display:inline-block;font-size:12px;padding:6px 10px;border-radius:999px;background:rgba(16,185,129,.12);color:#9afbd3;border:1px solid rgba(16,185,129,.35)}
+    .program-card footer{display:flex;justify-content:space-between;align-items:center;margin-top:18px}
+    .list{display:grid;gap:8px;padding-left:20px}.list li{margin-left:6px}
+    .overlay{position:fixed;inset:0;background:rgba(8,12,22,.6);opacity:0;pointer-events:none;transition:.25s ease;z-index:90}
+    .drawer{position:fixed;top:0;right:0;height:100%;width:min(420px,92vw);background:#0b1324;border-left:1px solid rgba(255,255,255,.08);transform:translateX(100%);transition:transform .3s cubic-bezier(.2,.75,.2,1);z-index:100;display:flex;flex-direction:column}
+    .drawer.open{transform:translateX(0)}.overlay.show{opacity:1;pointer-events:auto}
+    .drawer header{padding:18px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.08)}
+    .drawer main{padding:18px;overflow:auto}
+    .field{display:grid;gap:8px;margin:12px 0}.field label{font-size:13px;color:#b9c7e6}
+    .input,select,textarea{width:100%;padding:12px 14px;border-radius:12px;background:#0f1a32;color:var(--text);border:1px solid rgba(255,255,255,.1)}
+    textarea{min-height:88px;resize:vertical}
+    .row{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+    .drawer footer{padding:16px 18px;border-top:1px solid rgba(255,255,255,.08);display:flex;gap:10px}
+    .btn-whatsapp{background:linear-gradient(90deg,#25D366,#128C7E);color:#03110b;box-shadow:0 10px 24px rgba(18,140,126,.35)}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,.15);color:var(--text)}
+    .close{background:transparent;border:0;color:#bcd0ff;cursor:pointer;font-size:18px}
+    .toast{position:fixed;right:14px;bottom:14px;background:#102040;border:1px solid rgba(255,255,255,.1);color:#dfe8ff;padding:12px 14px;border-radius:12px;box-shadow:var(--shadow);opacity:0;transform:translateY(10px);transition:.25s ease;z-index:120}
+    .toast.show{opacity:1;transform:translateY(0)}
+    footer.site{padding:30px 0;border-top:1px solid rgba(255,255,255,.08);color:#9fb0d7}
+    @media (max-width:920px){.hero .wrap{grid-template-columns:1fr;padding:64px 0}.grid-3{grid-template-columns:1fr}.nav .desktop{display:none}}
+  </style>
 </head>
 <body>
-  <!-- Header with navigation -->
   <header>
-    <div class="logo">AI Training Cameroon</div>
-    <nav>
-      <a href="#features">Why Us</a>
-      <a href="#programs">Programs</a>
-      <a href="#payment">Payment</a>
-      <a href="#contact">Contact</a>
-      <a href="fr/index.html">FR</a>
-    </nav>
+    <div class="container nav">
+      <div class="brand"><div class="logo"></div> AI Training Cameroon</div>
+      <nav class="desktop">
+        <ul>
+          <li><a href="#why">Why Us</a></li>
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#payment">Payment</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a class="btn btn-outline" href="/fr/">FR</a></li>
+        </ul>
+      </nav>
+      <button class="btn btn-primary" data-scroll="#programs">Explore</button>
+    </div>
   </header>
 
-  <!-- Hero section -->
   <section class="hero">
-    <h1>Master Artificial Intelligence</h1>
-    <p>Build your future with our flexible and affordable AI training programs.</p>
-    <a class="btn" href="#programs">Explore Programs</a>
-  </section>
-
-  <!-- Why Choose Us section -->
-  <section id="features">
-    <h2>Why Choose Our Training?</h2>
-    <div class="features">
-      <div class="feature-box">
-        <h3>Industry‑focused curriculum</h3>
-        <p>Our modules cover fundamental and advanced AI topics including machine learning, data science, NLP and computer vision.</p>
+    <div class="hero-grid"></div>
+    <div class="container wrap">
+      <div>
+        <h1>Modern, flexible, locally‑led AI training.</h1>
+        <p class="lead">Build in‑demand skills (Python, Machine Learning, Deep Learning, NLP) and boost your career in Cameroon.</p>
+        <div class="cta">
+          <button class="btn btn-primary" data-scroll="#programs">View Programs</button>
+          <a class="btn btn-outline" href="#contact">WhatsApp &amp; Info</a>
+        </div>
+        <div class="statbar">
+          <span class="pill">Evening &amp; weekend classes</span>
+          <span class="pill">Cash payment recommended</span>
+          <span class="pill">Certificate included</span>
+        </div>
       </div>
-      <div class="feature-box">
-        <h3>Flexible learning</h3>
-        <p>Study online at your own pace with live sessions and recorded lectures. Pay in instalments via Mobile Money.</p>
-      </div>
-      <div class="feature-box">
-        <h3>Local support</h3>
-        <p>Our instructors are based in Cameroon and understand the local context. Get mentoring and career guidance.</p>
+      <div>
+        <div class="card" style="min-height:260px;display:grid;place-items:center;text-align:center">
+          <h3 style="margin:0 0 6px">Mentoring & Support</h3>
+          <p class="muted">In‑person guidance and live sessions. Real projects tailored to the local market.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Programs section -->
+  <section id="why">
+    <div class="container">
+      <h2>Why choose us?</h2>
+      <div class="grid-3">
+        <div class="card"><h3>Job‑focused curricula</h3><p class="muted">Content aligned with company needs (banking, retail, digital services).</p></div>
+        <div class="card"><h3>Flexibility</h3><p class="muted">On‑site / fully online, adaptable schedules, replays available.</p></div>
+        <div class="card"><h3>Local mentors</h3><p class="muted">Trainers based in Cameroon, peer community, job‑ready portfolio.</p></div>
+      </div>
+    </div>
+  </section>
+
   <section id="programs">
-    <h2>Training Programs</h2>
-    <div class="packages">
-      <!-- Basic package -->
-      <div class="package">
-        <h3>AI Fundamentals</h3>
-        <ul>
-          <li>1‑month online course</li>
-          <li>Introduction to AI concepts and Python programming</li>
-          <li>Weekly live Q&A sessions</li>
-        </ul>
-        <div class="price">30 000 FCFA</div>
-        <div class="enroll-btn"><a class="btn" href="#payment">Enroll Now</a></div>
-      </div>
-      <!-- Intermediate package -->
-      <div class="package">
-        <h3>Machine Learning &amp; Data Science</h3>
-        <ul>
-          <li>3‑month training</li>
-          <li>Supervised &amp; unsupervised learning, model evaluation</li>
-          <li>Projects using real datasets</li>
-        </ul>
-        <div class="price">60 000 FCFA</div>
-        <div class="enroll-btn"><a class="btn" href="#payment">Enroll Now</a></div>
-      </div>
-      <!-- Advanced package -->
-      <div class="package">
-        <h3>Advanced AI &amp; Data Science</h3>
-        <ul>
-          <li>6‑month comprehensive program</li>
-          <li>Deep learning (CNN, RNN, GANs) and Big Data tools</li>
-          <li>Capstone project &amp; professional certificate</li>
-        </ul>
-        <div class="price">100 000 FCFA</div>
-        <div class="enroll-btn"><a class="btn" href="#payment">Enroll Now</a></div>
+    <div class="container">
+      <h2>Training Programs</h2>
+      <div class="grid-3">
+        <article class="card program-card" data-course="AI Fundamentals" data-price="30000">
+          <h3>AI Fundamentals</h3>
+          <p class="muted">1 month · Python basics, AI logic, first ML models.</p>
+          <span class="badge">Beginner</span>
+          <footer>
+            <span class="price">30,000 FCFA</span>
+            <button class="btn btn-primary btn-buy">Buy</button>
+          </footer>
+        </article>
+        <article class="card program-card" data-course="Machine Learning & Data Science" data-price="60000">
+          <h3>Machine Learning & Data Science</h3>
+          <p class="muted">3 months · Regression, classification, evaluation, pandas.</p>
+          <span class="badge" style="background:rgba(59,130,246,.15);color:#cfe4ff;border-color:rgba(59,130,246,.35)">Intermediate</span>
+          <footer>
+            <span class="price">60,000 FCFA</span>
+            <button class="btn btn-primary btn-buy">Buy</button>
+          </footer>
+        </article>
+        <article class="card program-card" data-course="Advanced AI & Data Science" data-price="100000">
+          <h3>Advanced AI & Data Science</h3>
+          <p class="muted">6 months · Deep Learning, NLP, capstone projects.</p>
+          <span class="badge" style="background:rgba(16,185,129,.18);color:#caffe8f;border-color:rgba(16,185,129,.35)">Advanced</span>
+          <footer>
+            <span class="price">100,000 FCFA</span>
+            <button class="btn btn-primary btn-buy">Buy</button>
+          </footer>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- Payment information -->
   <section id="payment">
-    <h2>Payment &amp; Enrollment</h2>
-    <p>We accept Orange Money, MTN Mobile Money and cash. After selecting your program, please contact us on WhatsApp to receive payment instructions and your enrollment form.</p>
-    <p>For online payments, we integrate Mobile Money via the secure MeSomb/SmobilPay gateway. You can pay in two instalments (50% upfront and 50% during the course).</p>
+    <div class="container">
+      <h2>Payment & Enrollment</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Options</h3>
+          <ul class="list">
+            <li>Cash (recommended) — pay in person or via Mobile Money deposit</li>
+            <li>Mobile Money: Orange Money / MTN (deposit)</li>
+            <li>2‑installment plan available (50% + 50%)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>How it works</h3>
+          <p class="muted">Click <b>Buy</b> on your program, fill in the form, then validate: your order is sent directly to our WhatsApp.</p>
+        </div>
+        <div class="card">
+          <h3>Contact</h3>
+          <p id="contact" class="muted">WhatsApp: <b>+237 695 517 054</b><br/>Bafoussam · Cameroon</p>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- Contact section -->
-  <section id="contact" class="contact">
-    <h2>Contact Us</h2>
-    <p><strong>Location:</strong> Bafoussam, West Cameroon</p>
-    <p><strong>Phone/WhatsApp:</strong> <a href="https://wa.me/237XXXXXXXXX">+237 X XX XX XX XX</a></p>
-    <p><strong>Email:</strong> info@aitrainingcameroon.com</p>
-    <p>Questions? Reach out via WhatsApp for more information about the courses or to arrange payment in cash.</p>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 AI Training Cameroon. All rights reserved.</p>
+  <footer class="site">
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+      <small>© <span id="year"></span> AI Training Cameroon</small>
+      <small>EN · FR</small>
+    </div>
   </footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="drawer" id="drawer">
+    <header>
+      <strong>Complete your enrollment</strong>
+      <button class="close" id="drawerClose">✕</button>
+    </header>
+    <main>
+      <form id="orderForm">
+        <div class="field">
+          <label>Program</label>
+          <input class="input" id="f-program" name="program" readonly>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label>Amount</label>
+            <input class="input" id="f-price" name="price" readonly>
+          </div>
+          <div class="field">
+            <label>Plan</label>
+            <select id="f-plan" name="plan">
+              <option value="Cash">Cash (recommended)</option>
+              <option value="2 installments">2 installments (50% + 50%)</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label>Full name</label>
+          <input required class="input" id="f-name" name="name" placeholder="e.g. Paul N.">
+        </div>
+        <div class="row">
+          <div class="field">
+            <label>Learner WhatsApp number</label>
+            <input required class="input" id="f-whatsapp" name="whatsapp" placeholder="e.g. +2376…">
+          </div>
+          <div class="field">
+            <label>City</label>
+            <input class="input" id="f-city" name="city" placeholder="e.g. Bafoussam">
+          </div>
+        </div>
+        <div class="field">
+          <label>Payment method</label>
+          <select id="f-method" name="method">
+            <option>Cash</option>
+            <option>Orange Money</option>
+            <option>MTN Mobile Money</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Notes</label>
+          <textarea id="f-notes" name="notes" placeholder="Add anything useful (schedule, needs…)"></textarea>
+        </div>
+      </form>
+    </main>
+    <footer>
+      <button class="btn btn-whatsapp" id="sendWA">Send via WhatsApp</button>
+      <button class="btn btn-ghost" id="drawerCancel">Cancel</button>
+    </footer>
+  </aside>
+
+  <div class="toast" id="toast">WhatsApp link opened in a new tab.</div>
+
+  <script>
+    // Configure your WhatsApp number here: international format WITHOUT "+" or spaces
+    // Cameroon example: 2376XXXXXXXX
+    const WHATSAPP_NUMBER = "237695517054";
+
+    const qs = (s, el=document) => el.querySelector(s);
+    const qsa = (s, el=document) => [...el.querySelectorAll(s)];
+
+    qsa('[data-scroll]').forEach(btn=>btn.addEventListener('click', e=>{
+      const id = btn.getAttribute('data-scroll');
+      const el = qs(id); if(el){ e.preventDefault(); window.scrollTo({top:el.offsetTop-60, behavior:'smooth'}); }
+    }));
+
+    const overlay = qs('#overlay');
+    const drawer  = qs('#drawer');
+    const toast   = qs('#toast');
+
+    function openDrawer(data){
+      qs('#f-program').value = data.course;
+      qs('#f-price').value   = new Intl.NumberFormat('en-US').format(+data.price) + ' FCFA';
+      drawer.classList.add('open'); overlay.classList.add('show'); document.body.style.overflow='hidden';
+    }
+    function closeDrawer(){
+      drawer.classList.remove('open'); overlay.classList.remove('show'); document.body.style.overflow='';
+    }
+
+    qsa('.btn-buy').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const card = btn.closest('.program-card');
+        openDrawer({course: card.dataset.course, price: card.dataset.price});
+      });
+    });
+
+    qs('#drawerClose').onclick = closeDrawer;
+    qs('#drawerCancel').onclick = closeDrawer;
+    overlay.addEventListener('click', closeDrawer);
+
+    // Send WhatsApp
+    qs('#sendWA').addEventListener('click', ()=>{
+      if(!WHATSAPP_NUMBER || !/^\d{9,15}$/.test(WHATSAPP_NUMBER)){
+        alert('Please configure your WhatsApp number (WHATSAPP_NUMBER)');
+        return;
+      }
+      const v = (id)=>qs(id).value.trim();
+      if(!v('#f-name') || !v('#f-whatsapp')){ alert('Full name and learner WhatsApp are required.'); return; }
+
+      const message = `New order – ${v('#f-program')}\n`+
+        `Name: ${v('#f-name')}\n`+
+        `Learner WhatsApp: ${v('#f-whatsapp')}\n`+
+        `City: ${v('#f-city') || '-'}\n`+
+        `Program: ${v('#f-program')}\n`+
+        `Amount: ${v('#f-price')}\n`+
+        `Plan: ${qs('#f-plan').value}\n`+
+        `Payment method: ${qs('#f-method').value}\n`+
+        `Notes: ${v('#f-notes') || '-'}\n`+
+        `Source: Website`;
+
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+      window.open(url,'_blank');
+      toast.classList.add('show'); setTimeout(()=>toast.classList.remove('show'), 3200); closeDrawer();
+    });
+
+    qs('#year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
