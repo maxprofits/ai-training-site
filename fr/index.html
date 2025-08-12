@@ -3,97 +3,61 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AI Training Cameroon – Formations IA</title>
+  <title>AI Training Cameroon – Formations</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg: #0b1324;           /* navy-ink */
-      --fg: #0e1726;           /* page background */
-      --card: #111a2e;         /* card surface */
-      --muted: #93a0b8;
-      --text: #e6ecfa;
-      --brand: #3b82f6;        /* blue-500 */
-      --brand-2: #22d3ee;      /* cyan-400 */
-      --accent: #10b981;       /* emerald-500 */
-      --danger: #ef4444;       /* red-500 */
-      --shadow: 0 20px 40px rgba(0,0,0,.35);
-      --radius: 18px;
-      --radius-sm: 12px;
-      --container: 1200px;
-    }
+    :root{--bg:#0b1324;--fg:#0e1726;--card:#111a2e;--muted:#93a0b8;--text:#e6ecfa;--brand:#3b82f6;--brand-2:#22d3ee;--accent:#10b981;--danger:#ef4444;--shadow:0 20px 40px rgba(0,0,0,.35);--radius:18px;--container:1200px}
     *{box-sizing:border-box}
     html,body{height:100%}
-    body{
-      margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-      background: linear-gradient(180deg,#0a1226 0%, #0d1630 55%, #0e1a38 100%);
-      color:var(--text);
-      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
-    }
-    .container{max-width:var(--container); margin-inline:auto; padding-inline:20px}
-    /* Header */
-    header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(1.2) blur(8px); background:rgba(10,18,38,.55); border-bottom:1px solid rgba(255,255,255,.06)}
-    .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; height:68px}
-    .brand{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.3px}
-    .brand .logo{width:38px; height:38px; border-radius:10px; background:radial-gradient(circle at 30% 30%, var(--brand) 0, var(--brand-2) 60%, transparent 62%), linear-gradient(135deg, rgba(255,255,255,.2), rgba(255,255,255,0) 60%); box-shadow:0 6px 20px rgba(34,211,238,.35)}
-    nav ul{display:flex; gap:22px; list-style:none; padding:0; margin:0}
-    nav a{color:var(--text); text-decoration:none; font-weight:500; opacity:.92}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:linear-gradient(180deg,#0a1226 0%,#0d1630 55%,#0e1a38 100%);color:var(--text);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    .container{max-width:var(--container);margin-inline:auto;padding-inline:20px}
+    header{position:sticky;top:0;z-index:50;backdrop-filter:saturate(1.2) blur(8px);background:rgba(10,18,38,.55);border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:68px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.3px}
+    .brand .logo{width:38px;height:38px;border-radius:10px;background:radial-gradient(circle at 30% 30%,var(--brand) 0,var(--brand-2) 60%,transparent 62%),linear-gradient(135deg,rgba(255,255,255,.2),rgba(255,255,255,0) 60%);box-shadow:0 6px 20px rgba(34,211,238,.35)}
+    nav ul{display:flex;gap:22px;list-style:none;padding:0;margin:0}
+    nav a{color:var(--text);text-decoration:none;font-weight:500;opacity:.92}
     nav a:hover{opacity:1}
-    .btn{appearance:none; border:0; cursor:pointer; font-weight:600; padding:12px 18px; border-radius:12px}
-    .btn-primary{background:linear-gradient(90deg,var(--brand),var(--brand-2)); color:#091021; box-shadow:0 10px 24px rgba(59,130,246,.35)}
-    .btn-outline{background:transparent; color:var(--text); border:1px solid rgba(255,255,255,.15)}
-    /* Hero */
-    .hero{position:relative; overflow:hidden}
-    .hero::before{content:""; position:absolute; inset:-40% -10% auto -10%; height:80vh; min-height:420px; background:radial-gradient(60% 60% at 60% 40%, rgba(59,130,246,.28), transparent 60%), radial-gradient(50% 50% at 40% 60%, rgba(34,211,238,.23), transparent 62%); filter:blur(22px); pointer-events:none}
-    .hero-grid{position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px); background-size:46px 46px; mask-image:linear-gradient(to bottom, rgba(0,0,0,.6), rgba(0,0,0,0)); pointer-events:none}
-    .hero .wrap{display:grid; grid-template-columns: 1.15fr 1fr; align-items:center; gap:38px; padding:84px 0}
-    h1{font-size:clamp(32px,3.5vw,52px); line-height:1.05; margin:0 0 12px; font-weight:800}
-    p.lead{font-size:clamp(16px,1.5vw,20px); color:var(--muted); margin:0 0 26px}
-    .cta{display:flex; gap:12px; flex-wrap:wrap}
-    .statbar{display:flex; gap:18px; flex-wrap:wrap; margin-top:28px}
-    .pill{border:1px solid rgba(255,255,255,.12); padding:10px 14px; border-radius:999px; color:#bcd0ff; font-size:14px}
-    /* Sections */
+    .btn{appearance:none;border:0;cursor:pointer;font-weight:600;padding:12px 18px;border-radius:12px}
+    .btn-primary{background:linear-gradient(90deg,var(--brand),var(--brand-2));color:#091021;box-shadow:0 10px 24px rgba(59,130,246,.35)}
+    .btn-outline{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,.15)}
+    .hero{position:relative;overflow:hidden}
+    .hero::before{content:"";position:absolute;inset:-40% -10% auto -10%;height:80vh;min-height:420px;background:radial-gradient(60% 60% at 60% 40%,rgba(59,130,246,.28),transparent 60%),radial-gradient(50% 50% at 40% 60%,rgba(34,211,238,.23),transparent 62%);filter:blur(22px);pointer-events:none}
+    .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:46px 46px;mask-image:linear-gradient(to bottom,rgba(0,0,0,.6),rgba(0,0,0,0));pointer-events:none}
+    .hero .wrap{display:grid;grid-template-columns:1.15fr 1fr;align-items:center;gap:38px;padding:84px 0}
+    h1{font-size:clamp(32px,3.5vw,52px);line-height:1.05;margin:0 0 12px;font-weight:800}
+    p.lead{font-size:clamp(16px,1.5vw,20px);color:var(--muted);margin:0 0 26px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap}
+    .statbar{display:flex;gap:18px;flex-wrap:wrap;margin-top:28px}
+    .pill{border:1px solid rgba(255,255,255,.12);padding:10px 14px;border-radius:999px;color:#bcd0ff;font-size:14px}
     section{padding:64px 0}
-    h2{font-size:clamp(26px,2.4vw,36px); margin:0 0 22px}
-    .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:22px}
-    .card{background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow)}
-    .card h3{margin:0 0 10px}
-    .muted{color:var(--muted)}
-    /* Programs cards */
-    .program-card{position:relative; overflow:hidden}
-    .program-card .price{font-weight:800; font-size:22px; color:#d6f9ff}
-    .program-card .badge{display:inline-block; font-size:12px; padding:6px 10px; border-radius:999px; background:rgba(16,185,129,.12); color:#9afbd3; border:1px solid rgba(16,185,129,.35)}
-    .program-card footer{display:flex; justify-content:space-between; align-items:center; margin-top:18px}
-    /* Payment section */
-    .list{display:grid; gap:8px; padding-left:20px}
-    .list li{margin-left:6px}
-    /* Drawer (slide) */
-    .overlay{position:fixed; inset:0; background:rgba(8,12,22,.6); opacity:0; pointer-events:none; transition:.25s ease; z-index:90}
-    .drawer{position:fixed; top:0; right:0; height:100%; width:min(420px,92vw); background:#0b1324; border-left:1px solid rgba(255,255,255,.08); transform:translateX(100%); transition:transform .3s cubic-bezier(.2,.75,.2,1); z-index:100; display:flex; flex-direction:column}
-    .drawer.open{transform:translateX(0)}
-    .overlay.show{opacity:1; pointer-events:auto}
-    .drawer header{padding:18px 18px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(255,255,255,.08)}
-    .drawer main{padding:18px; overflow:auto}
-    .field{display:grid; gap:8px; margin:12px 0}
-    .field label{font-size:13px; color:#b9c7e6}
-    .input, select, textarea{width:100%; padding:12px 14px; border-radius:12px; background:#0f1a32; color:var(--text); border:1px solid rgba(255,255,255,.1)}
-    textarea{min-height:88px; resize:vertical}
-    .row{display:grid; gap:12px; grid-template-columns:1fr 1fr}
-    .drawer footer{padding:16px 18px; border-top:1px solid rgba(255,255,255,.08); display:flex; gap:10px}
-    .btn-whatsapp{background:linear-gradient(90deg,#25D366,#128C7E); color:#03110b; box-shadow:0 10px 24px rgba(18,140,126,.35)}
-    .btn-ghost{background:transparent; border:1px solid rgba(255,255,255,.15); color:var(--text)}
-    .close{background:transparent; border:0; color:#bcd0ff; cursor:pointer; font-size:18px}
-    .toast{position:fixed; right:14px; bottom:14px; background:#102040; border:1px solid rgba(255,255,255,.1); color:#dfe8ff; padding:12px 14px; border-radius:12px; box-shadow:var(--shadow); opacity:0; transform:translateY(10px); transition:.25s ease; z-index:120}
-    .toast.show{opacity:1; transform:translateY(0)}
-    /* Footer */
-    footer.site{padding:30px 0; border-top:1px solid rgba(255,255,255,.08); color:#9fb0d7}
-    /* Responsive */
-    @media (max-width: 920px){
-      .hero .wrap{grid-template-columns:1fr; padding:64px 0}
-      .grid-3{grid-template-columns:1fr}
-      .nav .desktop{display:none}
-    }
+    h2{font-size:clamp(26px,2.4vw,36px);margin:0 0 22px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+    .card h3{margin:0 0 10px}.muted{color:var(--muted)}
+    .program-card .price{font-weight:800;font-size:22px;color:#d6f9ff}
+    .program-card .badge{display:inline-block;font-size:12px;padding:6px 10px;border-radius:999px;background:rgba(16,185,129,.12);color:#9afbd3;border:1px solid rgba(16,185,129,.35)}
+    .program-card footer{display:flex;justify-content:space-between;align-items:center;margin-top:18px}
+    .list{display:grid;gap:8px;padding-left:20px}.list li{margin-left:6px}
+    .overlay{position:fixed;inset:0;background:rgba(8,12,22,.6);opacity:0;pointer-events:none;transition:.25s ease;z-index:90}
+    .drawer{position:fixed;top:0;right:0;height:100%;width:min(420px,92vw);background:#0b1324;border-left:1px solid rgba(255,255,255,.08);transform:translateX(100%);transition:transform .3s cubic-bezier(.2,.75,.2,1);z-index:100;display:flex;flex-direction:column}
+    .drawer.open{transform:translateX(0)}.overlay.show{opacity:1;pointer-events:auto}
+    .drawer header{padding:18px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.08)}
+    .drawer main{padding:18px;overflow:auto}
+    .field{display:grid;gap:8px;margin:12px 0}.field label{font-size:13px;color:#b9c7e6}
+    .input,select,textarea{width:100%;padding:12px 14px;border-radius:12px;background:#0f1a32;color:var(--text);border:1px solid rgba(255,255,255,.1)}
+    textarea{min-height:88px;resize:vertical}
+    .row{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+    .drawer footer{padding:16px 18px;border-top:1px solid rgba(255,255,255,.08);display:flex;gap:10px}
+    .btn-whatsapp{background:linear-gradient(90deg,#25D366,#128C7E);color:#03110b;box-shadow:0 10px 24px rgba(18,140,126,.35)}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,.15);color:var(--text)}
+    .close{background:transparent;border:0;color:#bcd0ff;cursor:pointer;font-size:18px}
+    .toast{position:fixed;right:14px;bottom:14px;background:#102040;border:1px solid rgba(255,255,255,.1);color:#dfe8ff;padding:12px 14px;border-radius:12px;box-shadow:var(--shadow);opacity:0;transform:translateY(10px);transition:.25s ease;z-index:120}
+    .toast.show{opacity:1;transform:translateY(0)}
+    footer.site{padding:30px 0;border-top:1px solid rgba(255,255,255,.08);color:#9fb0d7}
+    @media (max-width:920px){.hero .wrap{grid-template-columns:1fr;padding:64px 0}.grid-3{grid-template-columns:1fr}.nav .desktop{display:none}}
   </style>
 </head>
 <body>
@@ -106,7 +70,7 @@
           <li><a href="#programs">Programmes</a></li>
           <li><a href="#paiement">Paiement</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a class="btn btn-outline" href="/fr/">FR</a></li>
+          <li><a class="btn btn-outline" href="/">EN</a></li>
         </ul>
       </nav>
       <button class="btn btn-primary" data-scroll="#programs">Explorer</button>
@@ -118,20 +82,21 @@
     <div class="container wrap">
       <div>
         <h1>Formations IA modernes, flexibles et locales.</h1>
-        <p class="lead">Développez des compétences recherchées (Python, Machine Learning, Deep Learning, NLP) et boostez votre employabilité au Cameroun.</p>
+        <p class="lead">Développez des compétences recherchées (Machine Learning, Deep Learning, NLP) et apprenez la <strong>création de vidéos IA</strong> & la <strong>création de personnages IA</strong> pour monétiser sur les réseaux sociaux au Cameroun.</p>
         <div class="cta">
           <button class="btn btn-primary" data-scroll="#programs">Nos Programmes</button>
-          <a class="btn btn-outline" href="#contact">Whatsapp &amp; Infos</a>
+          <a class="btn btn-outline" href="#contact">WhatsApp &amp; Infos</a>
         </div>
         <div class="statbar">
           <span class="pill">Cours du soir &amp; week‑end</span>
           <span class="pill">Paiement au comptant recommandé</span>
+          <span class="pill">Monétisation réseaux sociaux</span>
           <span class="pill">Certification incluse</span>
         </div>
       </div>
       <div>
-        <div class="card" style="min-height:260px; display:grid; place-items:center; text-align:center">
-          <h3 style="margin:0 0 6px">Support & Mentorat</h3>
+        <div class="card" style="min-height:260px;display:grid;place-items:center;text-align:center">
+          <h3 style="margin:0 0 6px">Accompagnement & Support</h3>
           <p class="muted">Accompagnement en présentiel et en sessions live. Projets concrets adaptés au marché local.</p>
         </div>
       </div>
@@ -143,8 +108,8 @@
       <h2>Pourquoi choisir nos formations ?</h2>
       <div class="grid-3">
         <div class="card"><h3>Programmes orientés métier</h3><p class="muted">Contenu aligné sur les besoins des entreprises (banque, distribution, services numériques).</p></div>
-        <div class="card"><h3>Flexibilité</h3><p class="muted">Présentiel/100% en ligne, horaires adaptables, replays disponibles.</p></div>
-        <div class="card"><h3>Encadrement local</h3><p class="muted">Formateurs disponibles au Cameroun, communauté d’entraide et job‑ready portfolio.</p></div>
+        <div class="card"><h3>Flexibilité</h3><p class="muted">Présentiel / 100% en ligne, horaires adaptables, replays disponibles.</p></div>
+        <div class="card"><h3>Encadrement local</h3><p class="muted">Formateurs basés au Cameroun, communauté d’entraide, portfolio job‑ready.</p></div>
       </div>
     </div>
   </section>
@@ -153,9 +118,27 @@
     <div class="container">
       <h2>Programmes de Formation</h2>
       <div class="grid-3">
+        <article class="card program-card" data-course="Création de vidéos par IA (UGC & Reels)" data-price="40000">
+          <h3>Création de vidéos par IA (UGC & Reels)</h3>
+          <p class="muted">1 mois · CapCut AI, Runway/Motion, prompts, workflows TikTok/Reels/Shorts, pack de modèles.</p>
+          <span class="badge" style="background:rgba(59,130,246,.18); color:#d9e8ff; border-color:rgba(59,130,246,.35)">Monétisation</span>
+          <footer>
+            <span class="price">40 000 FCFA</span>
+            <button class="btn btn-primary btn-acheter">Acheter</button>
+          </footer>
+        </article>
+        <article class="card program-card" data-course="Création de personnages IA (Avatars/VTuber)" data-price="80000">
+          <h3>Création de personnages IA (Avatars/VTuber)</h3>
+          <p class="muted">2 mois · Avatars IA, voix / clonage, lip‑sync, OBS / live, scripts & tunnels de vente.</p>
+          <span class="badge" style="background:rgba(16,185,129,.18); color:#caffe8f; border-color:rgba(16,185,129,.35)">Monétisation</span>
+          <footer>
+            <span class="price">80 000 FCFA</span>
+            <button class="btn btn-primary btn-acheter">Acheter</button>
+          </footer>
+        </article>
         <article class="card program-card" data-course="Fondamentaux de l’IA" data-price="30000">
           <h3>Fondamentaux de l’IA</h3>
-          <p class="muted">1 mois · Bases Python, logique IA, premiers modèles ML.</p>
+          <p class="muted">1 mois · Fondamentaux, logique IA, premiers modèles ML.</p>
           <span class="badge">Débutant</span>
           <footer>
             <span class="price">30 000 FCFA</span>
@@ -164,8 +147,8 @@
         </article>
         <article class="card program-card" data-course="Machine Learning & Data Science" data-price="60000">
           <h3>Machine Learning & Data Science</h3>
-          <p class="muted">3 mois · Régression, classification, évaluation, pandas.</p>
-          <span class="badge" style="background:rgba(59,130,246,.15); color:#cfe4ff; border-color:rgba(59,130,246,.35)">Intermédiaire</span>
+          <p class="muted">3 mois · Régression, classification, évaluation, data wrangling.</p>
+          <span class="badge" style="background:rgba(59,130,246,.15);color:#cfe4ff;border-color:rgba(59,130,246,.35)">Intermédiaire</span>
           <footer>
             <span class="price">60 000 FCFA</span>
             <button class="btn btn-primary btn-acheter">Acheter</button>
@@ -174,7 +157,7 @@
         <article class="card program-card" data-course="IA avancée & Data Science" data-price="100000">
           <h3>IA avancée & Data Science</h3>
           <p class="muted">6 mois · Deep Learning, NLP, projets de fin d’étude.</p>
-          <span class="badge" style="background:rgba(16,185,129,.18); color:#caffe8f; border-color:rgba(16,185,129,.35)">Avancé</span>
+          <span class="badge" style="background:rgba(16,185,129,.18);color:#caffe8f;border-color:rgba(16,185,129,.35)">Avancé</span>
           <footer>
             <span class="price">100 000 FCFA</span>
             <button class="btn btn-primary btn-acheter">Acheter</button>
@@ -192,7 +175,7 @@
           <h3>Options</h3>
           <ul class="list">
             <li>Comptant (recommandé) – espèces sur place ou dépôt Mobile Money</li>
-            <li>Mobile Money : Orange Money / MTN (dépôt)</li>
+            <li>Mobile Money : Orange Money / MTN (dépôt)</li>
             <li>Paiement en 2 tranches possible (50% + 50%)</li>
           </ul>
         </div>
@@ -202,20 +185,19 @@
         </div>
         <div class="card">
           <h3>Contact</h3>
-          <p id="contact" class="muted">WhatsApp: <b>+237 695 517 054</b><br/>Bafoussam · Cameroun</p>
+          <p id="contact" class="muted">WhatsApp : <b>+237 695 517 054</b><br/>Bafoussam · Cameroun</p>
         </div>
       </div>
     </div>
   </section>
 
   <footer class="site">
-    <div class="container" style="display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap">
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
       <small>© <span id="year"></span> AI Training Cameroon</small>
       <small>FR · EN</small>
     </div>
   </footer>
 
-  <!-- Overlay + Drawer (Slide) -->
   <div class="overlay" id="overlay"></div>
   <aside class="drawer" id="drawer">
     <header>
@@ -258,7 +240,7 @@
         <div class="field">
           <label>Mode de paiement</label>
           <select id="f-mode" name="mode">
-            <option>Espèces</option>
+            <option>Comptant</option>
             <option>Orange Money</option>
             <option>MTN Mobile Money</option>
           </select>
@@ -278,14 +260,14 @@
   <div class="toast" id="toast">Lien WhatsApp ouvert dans un nouvel onglet.</div>
 
   <script>
-    // 1) Renseignez ICI votre numéro WhatsApp PRO au format international SANS "+" ni espaces
-    // Exemple Cameroun: 2376XXXXXXXX
-    const WHATSAPP_NUMBER = "237695517054"; // <-- À REMPLACER PAR VOTRE NUMÉRO
+    // Configurez votre numéro WhatsApp : format international SANS "+" ni espaces
+    // Exemple Cameroun : 2376XXXXXXXX
+    const WHATSAPP_NUMBER = "237695517054";
 
     const qs = (s, el=document) => el.querySelector(s);
     const qsa = (s, el=document) => [...el.querySelectorAll(s)];
 
-    // Smooth scroll
+    // Scroll doux
     qsa('[data-scroll]').forEach(btn=>btn.addEventListener('click', e=>{
       const id = btn.getAttribute('data-scroll');
       const el = qs(id);
@@ -294,8 +276,7 @@
 
     const overlay = qs('#overlay');
     const drawer  = qs('#drawer');
-    const orderForm = qs('#orderForm');
-    const toast = qs('#toast');
+    const toast   = qs('#toast');
 
     function openDrawer(data){
       qs('#f-program').value = data.course;
