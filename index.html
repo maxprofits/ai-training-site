@@ -8,11 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg:#0b1324; --fg:#0e1726; --card:#111a2e; --muted:#93a0b8; --text:#e6ecfa;
-      --brand:#3b82f6; --brand-2:#22d3ee; --accent:#10b981; --danger:#ef4444;
-      --shadow:0 20px 40px rgba(0,0,0,.35); --radius:18px; --container:1200px;
-    }
+    :root{--bg:#0b1324;--fg:#0e1726;--card:#111a2e;--muted:#93a0b8;--text:#e6ecfa;--brand:#3b82f6;--brand-2:#22d3ee;--accent:#10b981;--danger:#ef4444;--shadow:0 20px 40px rgba(0,0,0,.35);--radius:18px;--container:1200px}
     *{box-sizing:border-box}
     html,body{height:100%}
     body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:linear-gradient(180deg,#0a1226 0%,#0d1630 55%,#0e1a38 100%);color:var(--text);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
@@ -125,7 +121,7 @@
         <article class="card program-card" data-course="AI Video Creation (UGC & Reels)" data-price="40000">
           <h3>AI Video Creation (UGC & Reels)</h3>
           <p class="muted">1 month · CapCut AI, Runway/Motion, prompting, TikTok/Reels/Shorts workflows, template pack.</p>
-          <span class="badge" style="background:rgba(59,130,246,.18); color:#d9e8ff; border-color:rgba(59,130,246,.35)">Monetization</span>
+          <span class="badge" style="background:rgba(59,130,246,.18);color:#d9e8ff;border-color:rgba(59,130,246,.35)">Monetization</span>
           <footer>
             <span class="price">40,000 FCFA</span>
             <button class="btn btn-primary btn-buy">Buy</button>
@@ -134,7 +130,7 @@
         <article class="card program-card" data-course="AI Character Creation (Avatars/VTuber)" data-price="80000">
           <h3>AI Character Creation (Avatars/VTuber)</h3>
           <p class="muted">2 months · AI avatars, voice/cloning, lip‑sync, OBS/live, scripts & sales funnels.</p>
-          <span class="badge" style="background:rgba(16,185,129,.18); color:#caffe8f; border-color:rgba(16,185,129,.35)">Monetization</span>
+          <span class="badge" style="background:rgba(16,185,129,.18);color:#caffe8f;border-color:rgba(16,185,129,.35)">Monetization</span>
           <footer>
             <span class="price">80,000 FCFA</span>
             <button class="btn btn-primary btn-buy">Buy</button>
@@ -256,7 +252,7 @@
       </form>
     </main>
     <footer>
-      <button class="btn btn-whatsapp" id="sendWA">Send via WhatsApp</button>
+      <button type="button" class="btn btn-whatsapp" id="sendWA">Send via WhatsApp</button>
       <button class="btn btn-ghost" id="drawerCancel">Cancel</button>
     </footer>
   </aside>
@@ -300,7 +296,7 @@
     qs('#drawerCancel').onclick = closeDrawer;
     overlay.addEventListener('click', closeDrawer);
 
-    // Send WhatsApp
+    // Send WhatsApp (with robust fallbacks for popup blockers)
     qs('#sendWA').addEventListener('click', ()=>{
       if(!WHATSAPP_NUMBER || !/^\d{9,15}$/.test(WHATSAPP_NUMBER)){
         alert('Please configure your WhatsApp number (WHATSAPP_NUMBER)');
@@ -320,8 +316,13 @@
         `Notes: ${v('#f-notes') || '-'}\n`+
         `Source: Website`;
 
-      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-      window.open(url,'_blank');
+      const url1 = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+      const url2 = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(message)}`;
+      let opened = false;
+      try { const w = window.open(url1, '_blank'); opened = !!w; } catch(e) {}
+      if(!opened){ try { window.location.href = url1; opened = true; } catch(e) {} }
+      if(!opened){ window.location.href = url2; }
+
       toast.classList.add('show'); setTimeout(()=>toast.classList.remove('show'), 3200); closeDrawer();
     });
 
