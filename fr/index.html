@@ -58,6 +58,7 @@
     .toast.show{opacity:1;transform:translateY(0)}
     footer.site{padding:30px 0;border-top:1px solid rgba(255,255,255,.08);color:#9fb0d7}
     @media (max-width:920px){.hero .wrap{grid-template-columns:1fr;padding:64px 0}.grid-3{grid-template-columns:1fr}.nav .desktop{display:none}}
+    .toast{pointer-events:none}
   </style>
 </head>
 <body>
@@ -252,7 +253,7 @@
       </form>
     </main>
     <footer>
-      <button class="btn btn-whatsapp" id="sendWA">Envoyer sur WhatsApp</button>
+      <button type="button" class="btn btn-whatsapp" id="sendWA">Envoyer sur WhatsApp</button>
       <button class="btn btn-ghost" id="drawerCancel">Annuler</button>
     </footer>
   </aside>
@@ -301,10 +302,10 @@
     qs('#drawerCancel').onclick = closeDrawer;
     overlay.addEventListener('click', closeDrawer);
 
-    // Envoi WhatsApp
+    // Envoi WhatsApp (avec fallback pour bloqueurs de pop-up)
     qs('#sendWA').addEventListener('click', ()=>{
       if(!WHATSAPP_NUMBER || !/^\d{9,15}$/.test(WHATSAPP_NUMBER)){
-        alert('Veuillez configurer votre numéro WhatsApp pro dans le code (WHATSAPP_NUMBER).');
+        alert('Veuillez configurer votre numéro WhatsApp pro (WHATSAPP_NUMBER).');
         return;
       }
       const v = (id)=>qs(id).value.trim();
@@ -323,8 +324,13 @@
         `Notes: ${v('#f-notes') || '-'}\n`+
         `Source: Site web`;
 
-      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-      window.open(url, '_blank');
+      const url1 = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+      const url2 = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(message)}`;
+      let opened = false;
+      try { const w = window.open(url1, '_blank'); opened = !!w; } catch(e) {}
+      if(!opened){ try { window.location.href = url1; opened = true; } catch(e) {} }
+      if(!opened){ window.location.href = url2; }
+
       toast.classList.add('show');
       setTimeout(()=>toast.classList.remove('show'), 3200);
       closeDrawer();
