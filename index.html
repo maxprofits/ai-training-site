@@ -52,7 +52,7 @@
     .row{display:grid;gap:12px;grid-template-columns:1fr 1fr}
     .drawer footer{padding:16px 18px;border-top:1px solid rgba(255,255,255,.08);display:flex;gap:10px}
     .btn-whatsapp{background:linear-gradient(90deg,#25D366,#128C7E);color:#03110b;box-shadow:0 10px 24px rgba(18,140,126,.35)}
-    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,.15);color:#var(--text)}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,.15);color:var(--text)}
     .close{background:transparent;border:0;color:#bcd0ff;cursor:pointer;font-size:18px}
     .toast{position:fixed;right:14px;bottom:14px;background:#102040;border:1px solid rgba(255,255,255,.1);color:#dfe8ff;padding:12px 14px;border-radius:12px;box-shadow:var(--shadow);opacity:0;transform:translateY(10px);transition:.25s ease;z-index:120}
     .toast.show{opacity:1;transform:translateY(0)}
@@ -65,6 +65,14 @@
       url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 420'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%233b82f6' stop-opacity='.55'/><stop offset='1' stop-color='%2322d3ee' stop-opacity='.45'/></linearGradient></defs><g fill='none' stroke='url(%23g)' stroke-width='1.4' opacity='.8'><path d='M40 300 L170 240 L300 280 L430 210 L560 240 L690 180 L820 210 L950 170 L1080 200'/><path d='M40 250 L170 190 L300 230 L430 160 L560 200 L690 150 L820 180 L950 140 L1080 170'/></g><g fill='%23a5b4fc' opacity='.35'><circle cx='170' cy='240' r='4'/><circle cx='300' cy='280' r='4'/><circle cx='430' cy='210' r='4'/><circle cx='560' cy='240' r='4'/><circle cx='690' cy='180' r='4'/><circle cx='820' cy='210' r='4'/><circle cx='950' cy='170' r='4'/></g></svg>");
       background-repeat:no-repeat;background-size:cover;background-position:center top;box-shadow:inset 0 0 0 9999px rgba(11,19,36,.18)}
     .hero-copy h1{margin-top:6px}
+      /* Thumbnails for programs (EN) */
+    .thumb{height:140px;border-radius:16px;background:#0f1a32;border:1px solid rgba(255,255,255,.08);display:grid;place-items:center;margin-bottom:12px;overflow:hidden;position:relative;box-shadow:var(--shadow)}
+    .thumb.video{background:radial-gradient(120% 100% at 10% 10%, rgba(59,130,246,.35), transparent 60%), radial-gradient(120% 100% at 90% 90%, rgba(34,211,238,.28), transparent 60%), #0f1a32}
+    .thumb.avatar{background:radial-gradient(120% 100% at 15% 20%, rgba(139,92,246,.35), transparent 60%), radial-gradient(120% 100% at 85% 80%, rgba(16,185,129,.28), transparent 60%), #0f1a32}
+    .thumb.learn{background:radial-gradient(120% 100% at 20% 20%, rgba(250,204,21,.35), transparent 60%), radial-gradient(120% 100% at 80% 80%, rgba(59,130,246,.25), transparent 60%), #0f1a32}
+    .thumb.ml{background:radial-gradient(120% 100% at 15% 25%, rgba(34,197,94,.35), transparent 60%), radial-gradient(120% 100% at 85% 75%, rgba(59,130,246,.28), transparent 60%), #0f1a32}
+    .thumb.adv{background:radial-gradient(120% 100% at 20% 20%, rgba(244,63,94,.32), transparent 60%), radial-gradient(120% 100% at 85% 80%, rgba(99,102,241,.28), transparent 60%), #0f1a32}
+    .thumb svg{width:70%;max-width:260px;opacity:.95;filter:drop-shadow(0 10px 24px rgba(0,0,0,.35))}
   </style>
 </head>
 <body>
@@ -126,6 +134,15 @@
       <h2>Training Programs</h2>
       <div class="grid-3">
         <article class="card program-card" data-course="AI Video Creation (UGC & Reels)" data-price="40000">
+          <div class="thumb video">
+            <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+              <rect x="20" y="24" width="120" height="80" rx="12" fill="#0b1324" stroke="rgba(255,255,255,0.15)"/>
+              <polygon points="78,54 108,74 78,94" fill="#22d3ee"/>
+              <rect x="148" y="44" width="30" height="40" rx="6" fill="rgba(59,130,246,0.85)"/>
+              <circle cx="34" cy="112" r="6" fill="rgba(255,255,255,0.25)"/>
+              <circle cx="50" cy="112" r="4" fill="rgba(255,255,255,0.18)"/>
+            </svg>
+          </div>
           <h3>AI Video Creation (UGC & Reels)</h3>
           <p class="muted">1 month · CapCut AI, Runway/Motion, prompting, TikTok/Reels/Shorts workflows, template pack.</p>
           <span class="badge" style="background:rgba(59,130,246,.18);color:#d9e8ff;border-color:rgba(59,130,246,.35)">Monetization</span>
@@ -135,6 +152,17 @@
           </footer>
         </article>
         <article class="card program-card" data-course="AI Character Creation (Avatars/VTuber)" data-price="80000">
+          <div class="thumb avatar">
+            <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+              <circle cx="100" cy="62" r="26" fill="rgba(59,130,246,0.5)"/>
+              <circle cx="92" cy="60" r="3" fill="#0b1324"/>
+              <circle cx="108" cy="60" r="3" fill="#0b1324"/>
+              <path d="M88 72 Q100 80 112 72" stroke="#0b1324" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <rect x="60" y="92" width="80" height="28" rx="14" fill="rgba(34,211,238,0.35)"/>
+              <circle cx="82" cy="106" r="6" fill="#0b1324"/>
+              <rect x="94" y="102" width="34" height="8" rx="4" fill="#0b1324"/>
+            </svg>
+          </div>
           <h3>AI Character Creation (Avatars/VTuber)</h3>
           <p class="muted">2 months · AI avatars, voice/cloning, lip‑sync, OBS/live, scripts & sales funnels.</p>
           <span class="badge" style="background:rgba(16,185,129,.18);color:#caffe8f;border-color:rgba(16,185,129,.35)">Monetization</span>
@@ -144,6 +172,13 @@
           </footer>
         </article>
         <article class="card program-card" data-course="AI Fundamentals" data-price="30000">
+          <div class="thumb learn">
+            <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+              <rect x="30" y="60" width="40" height="40" rx="8" fill="rgba(250,204,21,0.85)"/>
+              <rect x="80" y="48" width="40" height="52" rx="8" fill="rgba(59,130,246,0.85)"/>
+              <rect x="130" y="36" width="40" height="64" rx="8" fill="rgba(34,211,238,0.85)"/>
+            </svg>
+          </div>
           <h3>AI Fundamentals</h3>
           <p class="muted">1 month · Foundations, AI logic, first ML models.</p>
           <span class="badge">Beginner</span>
@@ -153,6 +188,15 @@
           </footer>
         </article>
         <article class="card program-card" data-course="Machine Learning & Data Science" data-price="60000">
+          <div class="thumb ml">
+            <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+              <rect x="36" y="76" width="20" height="28" rx="4" fill="rgba(34,197,94,0.85)"/>
+              <rect x="66" y="60" width="20" height="44" rx="4" fill="rgba(59,130,246,0.85)"/>
+              <rect x="96" y="48" width="20" height="56" rx="4" fill="rgba(22,163,74,0.85)"/>
+              <rect x="126" y="66" width="20" height="38" rx="4" fill="rgba(56,189,248,0.85)"/>
+              <path d="M32 100 C60 80, 90 70, 160 60" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
           <h3>Machine Learning & Data Science</h3>
           <p class="muted">3 months · Regression, classification, evaluation, data wrangling.</p>
           <span class="badge" style="background:rgba(59,130,246,.15);color:#cfe4ff;border-color:rgba(59,130,246,.35)">Intermediate</span>
@@ -162,6 +206,16 @@
           </footer>
         </article>
         <article class="card program-card" data-course="Advanced AI & Data Science" data-price="100000">
+          <div class="thumb adv">
+            <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+              <circle cx="60" cy="70" r="9" fill="rgba(244,63,94,0.9)"/>
+              <circle cx="100" cy="46" r="9" fill="rgba(99,102,241,0.9)"/>
+              <circle cx="140" cy="70" r="9" fill="rgba(34,211,238,0.9)"/>
+              <circle cx="100" cy="100" r="9" fill="rgba(16,185,129,0.9)"/>
+              <path d="M60 70 L100 46 L140 70 L100 100 Z" stroke="rgba(255,255,255,0.55)" stroke-width="3" fill="none"/>
+              <path d="M60 70 L100 100 L140 70" stroke="rgba(255,255,255,0.35)" stroke-width="2" fill="none"/>
+            </svg>
+          </div>
           <h3>Advanced AI & Data Science</h3>
           <p class="muted">6 months · Deep Learning, NLP, capstone projects.</p>
           <span class="badge" style="background:rgba(16,185,129,.18);color:#caffe8f;border-color:rgba(16,185,129,.35)">Advanced</span>
