@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin – AI Training Cameroon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg1:#0a1226;--bg2:#0e1a38;--card:#111a2e;--text:#e6ecfa;--muted:#93a0b8;--brand:#3b82f6;--brand2:#22d3ee;--radius:16px;--shadow:0 18px 40px rgba(0,0,0,.35)}
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      background:linear-gradient(180deg,var(--bg1) 0%,var(--bg2) 100%);color:var(--text)}
+    .wrap{max-width:1100px;margin:0 auto;padding:18px 20px 40px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800}
+    .logo{width:34px;height:34px;border-radius:9px;background:radial-gradient(circle at 30% 30%,var(--brand),var(--brand2) 65%,transparent 66%),linear-gradient(135deg,rgba(255,255,255,.2),rgba(255,255,255,0) 60%);box-shadow:0 6px 20px rgba(34,211,238,.35)}
+
+    .card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .stack{display:grid;gap:10px}
+    label{font-size:13px;color:var(--muted)}
+    input,select,textarea{width:100%;padding:10px 12px;border-radius:12px;background:#0f1a32;color:var(--text);border:1px solid rgba(255,255,255,.12)}
+    button{appearance:none;border:0;border-radius:12px;padding:10px 14px;font-weight:700;cursor:pointer}
+    .btn{background:linear-gradient(90deg,var(--brand),var(--brand2));color:#091021;box-shadow:0 10px 22px rgba(59,130,246,.35)}
+    .btn-ghost{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,.15)}
+    .muted{color:var(--muted)}
+    .sec-title{margin:0 0 8px;font-size:18px}
+
+    /* Login gate */
+    .gate{display:grid;place-items:center;height:100vh}
+    .login{width:min(420px,92vw)}
+    .login h1{margin:0 0 8px}
+
+    /* Preview */
+    .preview{width:100%;aspect-ratio:297/210;border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden;background:#0b1324}
+    iframe{width:100%;height:100%;border:0}
+
+    @media (max-width: 940px){.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div id="gate" class="gate">
+    <div class="card login">
+      <div class="brand"><div class="logo"></div> AI Training Cameroon — Admin</div>
+      <h1>Connexion admin</h1>
+      <p class="muted" style="margin-top:2px">Cette page n’est pas listée. Saisis le mot de passe admin.</p>
+      <div class="stack" style="margin-top:10px">
+        <label>Mot de passe
+          <input id="pwd" type="password" placeholder="••••••" autocomplete="current-password"/>
+        </label>
+        <div style="display:flex;gap:10px;align-items:center">
+          <button class="btn" id="btn-login">Se connecter</button>
+          <small class="muted" id="hint"></small>
+        </div>
+      </div>
+      <details style="margin-top:10px">
+        <summary>Changer le mot de passe (avancé)</summary>
+        <p class="muted">Tape un nouveau mot de passe ici pour obtenir son SHA‑256, puis remplace la constante <code>ADMIN_HASH</code> dans ce fichier.</p>
+        <div class="row">
+          <input id="new-pass" placeholder="Nouveau mot de passe"/>
+          <input id="new-hash" placeholder="SHA-256 (auto)" readonly/>
+        </div>
+        <button class="btn-ghost" id="btn-hash" style="margin-top:6px">Calculer le hash</button>
+      </details>
+    </div>
+  </div>
+
+  <div id="app" style="display:none">
+    <div class="wrap">
+      <header>
+        <div class="brand"><div class="logo"></div> Admin — AI Training Cameroon</div>
+        <div style="display:flex;gap:8px">
+          <button class="btn-ghost" id="btn-logout">Déconnexion</button>
+        </div>
+      </header>
+
+      <div class="grid">
+        <!-- CERTIFICATS -->
+        <section class="card">
+          <h2 class="sec-title">Certificats — Générateur rapide</h2>
+          <p class="muted">Génère un lien prérempli vers <code>/certificats/modele.html</code> et prévisualise ci‑dessous. Imprime ensuite en PDF depuis la page certificat.</p>
+          <div class="row" style="margin-top:10px">
+            <label>Nom & Prénom
+              <input id="c-name" placeholder="ex: Carine Tchoumi"/>
+            </label>
+            <label>Programme
+              <select id="c-prog">
+                <option>Création vidéo IA (UGC & Reels)</option>
+                <option>Personnages IA (Avatars/VTuber)</option>
+                <option>Bases de l’IA</option>
+                <option>Machine Learning & Data Science</option>
+                <option>IA avancée & Data Science</option>
+              </select>
+            </label>
+          </div>
+          <div class="row">
+            <label>Date (YYYY‑MM‑DD)
+              <input id="c-date" type="date"/>
+            </label>
+            <label>ID de vérification
+              <input id="c-id" placeholder="ATC-2025-001"/>
+            </label>
+          </div>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <button class="btn" id="btn-open-cert">Ouvrir le certificat</button>
+            <button class="btn-ghost" id="btn-preview">Prévisualiser en dessous</button>
+          </div>
+          <div class="preview" style="margin-top:12px"><iframe id="cert-frame" title="Aperçu certificat"></iframe></div>
+        </section>
+
+        <!-- TEMOIGNAGES -->
+        <section class="card">
+          <h2 class="sec-title">Témoignages — Éditeur</h2>
+          <p class="muted">Ajoute/édite des témoignages (FR & EN). Télécharge ensuite le fichier <code>assets/testimonials.js</code> et remplace‑le sur le site.</p>
+          <div class="stack">
+            <details open>
+              <summary><b>FR</b> — Témoignages</summary>
+              <div id="fr-list" class="stack"></div>
+              <button class="btn-ghost" id="fr-add">+ Ajouter</button>
+            </details>
+            <details>
+              <summary><b>EN</b> — Testimonials</summary>
+              <div id="en-list" class="stack"></div>
+              <button class="btn-ghost" id="en-add">+ Add</button>
+            </details>
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+              <button class="btn" id="btn-export">Télécharger testimonials.js</button>
+              <small class="muted">Astuce : glisse‑dépose le fichier téléchargé dans <code>/assets/</code>.</small>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* ====================
+       Auth minimale (statique)
+       — Change ADMIN_HASH (SHA‑256 du mot de passe)
+       — Par défaut: atc2025!  → à changer immédiatement
+    ==================== */
+    const ADMIN_HASH = '8d5537dbfd32f2666efdbf75c3b92240279a716fdaf4d27609d3373354de39ef';
+    const SESSION_KEY = 'atc_admin_session_v1';
+    const SESSION_TTL_H = 12; // 12 heures
+
+    const $ = (s,el=document)=> el.querySelector(s);
+    const $$ = (s,el=document)=> [...el.querySelectorAll(s)];
+
+    async function sha256(text){
+      const enc = new TextEncoder().encode(text);
+      const buf = await crypto.subtle.digest('SHA-256', enc);
+      return [...new Uint8Array(buf)].map(b=>b.toString(16).padStart(2,'0')).join('');
+    }
+
+    function saveSession(){ localStorage.setItem(SESSION_KEY, JSON.stringify({t:Date.now()})); }
+    function hasSession(){ try{ const o=JSON.parse(localStorage.getItem(SESSION_KEY)||'{}'); return (Date.now()-o.t) < SESSION_TTL_H*3600*1000; }catch(e){ return false } }
+    function logout(){ localStorage.removeItem(SESSION_KEY); location.reload(); }
+
+    function showApp(){ $('#gate').style.display='none'; $('#app').style.display='block'; }
+
+    // Login flow
+    $('#btn-login').addEventListener('click', async ()=>{
+      const pwd = $('#pwd').value;
+      const h = await sha256(pwd);
+      if(h===ADMIN_HASH){ saveSession(); showApp(); }
+      else { $('#hint').textContent = 'Mot de passe invalide'; }
+    });
+
+    $('#btn-hash').addEventListener('click', async ()=>{
+      const p = $('#new-pass').value; if(!p) return;
+      $('#new-hash').value = await sha256(p);
+    });
+
+    $('#btn-logout').addEventListener('click', logout);
+
+    if(hasSession()) showApp();
+
+    /* ====================
+       CERTIFICATS
+    ==================== */
+    function buildCertURL(){
+      const n = $('#c-name').value.trim()||'Nom Exemple';
+      const c = $('#c-prog').value.trim();
+      const d = $('#c-date').value || new Date().toISOString().slice(0,10);
+      const id= $('#c-id').value.trim()||'ATC-2025-001';
+      const q = new URLSearchParams({n:n,c:c,d:d,id:id}).toString();
+      return `/certificats/modele.html?${q}`;
+    }
+    $('#btn-open-cert').addEventListener('click', ()=>{ window.open(buildCertURL(), '_blank'); });
+    $('#btn-preview').addEventListener('click', ()=>{ $('#cert-frame').src = buildCertURL(); });
+
+    /* ====================
+       TEMOIGNAGES
+    ==================== */
+    const frData = [
+      { initials:'CT', name:'Carine T.', city:'Douala', program:'Création vidéo IA', quote:"J’ai lancé des Reels hebdo pour 2 boutiques, +30% de vues en un mois.", badge:'Monétisation' },
+      { initials:'JM', name:'Junior M.', city:'Yaoundé', program:'Personnages IA (VTuber)', quote:'Mon avatar VTuber est prêt, j’ai vendu 3 scripts à un client local.', badge:'Bêta -40%' },
+      { initials:'LB', name:'Loïc B.', city:'Bafoussam', program:'Bases de l’IA', quote:"Mini‑projet ML validé, j’ai un portfolio pour mes candidatures.", badge:'Certificat' }
+    ];
+    const enData = [
+      { initials:'AN', name:'Ana N.', city:'Buea', program:'AI Video (UGC)', quote:'Weekly Reels brought steady growth, I booked my first UGC gig.', badge:'Monetization' },
+      { initials:'DK', name:'Derek K.', city:'Yaoundé', program:'AI Characters', quote:'Set up a live avatar with scripts; 2 small paid gigs so far.', badge:'Beta' },
+      { initials:'PM', name:'Prisca M.', city:'Douala', program:'AI Foundations', quote:'Passed my graded mini‑project and built a starter portfolio.', badge:'Certificate' }
+    ];
+
+    function renderList(container, arr){
+      container.innerHTML = '';
+      arr.forEach((t,idx)=>{
+        const row = document.createElement('div');
+        row.className = 'row';
+        row.style.marginBottom = '8px';
+        row.innerHTML = `
+          <input placeholder="Initiales" value="${t.initials||''}" data-k="initials"/>
+          <input placeholder="Nom" value="${t.name||''}" data-k="name"/>
+          <input placeholder="Ville" value="${t.city||''}" data-k="city"/>
+          <input placeholder="Programme" value="${t.program||''}" data-k="program"/>
+          <input placeholder="Badge" value="${t.badge||''}" data-k="badge"/>
+          <input placeholder="Citation" value="${t.quote||''}" data-k="quote"/>
+          <button class="btn-ghost" data-del>Supprimer</button>
+        `;
+        row.querySelectorAll('input').forEach(inp=>{
+          inp.addEventListener('input', ()=>{ t[inp.dataset.k]=inp.value; });
+        });
+        row.querySelector('[data-del]').addEventListener('click', ()=>{ arr.splice(idx,1); renderList(container,arr); });
+        container.appendChild(row);
+      });
+    }
+
+    const frList = document.getElementById('fr-list');
+    const enList = document.getElementById('en-list');
+    renderList(frList, frData);
+    renderList(enList, enData);
+
+    document.getElementById('fr-add').addEventListener('click', ()=>{ frData.push({initials:'',name:'',city:'',program:'',quote:'',badge:''}); renderList(frList, frData); });
+    document.getElementById('en-add').addEventListener('click', ()=>{ enData.push({initials:'',name:'',city:'',program:'',quote:'',badge:''}); renderList(enList, enData); });
+
+    function jsTemplate(fr,en){
+      return `/** Auto‑généré depuis /admin */\n(function(){\n  const FR = ${JSON.stringify(fr, null, 2)};\n  const EN = ${JSON.stringify(en, null, 2)};\n  const data = (document.documentElement.lang === 'fr') ? FR : EN;\n  const root = document.getElementById('testimonials');\n  if(!root) return;\n  const card = (t)=> \`\n    <div class=\"card\">\n      <div style=\"display:flex;gap:12px;align-items:center;margin-bottom:8px\">\n        <div class=\"avatar\" style=\"width:44px;height:44px;border-radius:999px;display:grid;place-items:center;font-weight:700;color:#091021;background:linear-gradient(90deg,#3b82f6,#22d3ee);\">\${t.initials}\</div>\n        <div>\n          <div style=\"font-weight:700\">\${t.name} · <span class=\"muted\">\${t.city}\</span></div>\n          <div class=\"muted\" style=\"font-size:13px\">\${t.program}\</div>\n        </div>\n      </div>\n      <div class=\"badge\" style=\"margin-bottom:8px\">\${t.badge}\</div>\n      <p class=\"muted\" style=\"margin:0\">“\${t.quote}”</p>\n    </div>\n  \`;\n  root.innerHTML = data.map(card).join('');\n})();\n`;
+    }
+
+    function download(filename, text){
+      const blob = new Blob([text], {type:'text/javascript'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = filename; a.click();
+      setTimeout(()=> URL.revokeObjectURL(url), 500);
+    }
+
+    document.getElementById('btn-export').addEventListener('click', ()=>{
+      download('testimonials.js', jsTemplate(frData, enData));
+    });
+  </script>
+</body>
+</html>
