@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- AUTO-DETECT LANG -->
+  <script src="/assets/lang.js"></script>
+
+  <title>AI Training Cameroon – Formations (FR)</title>
+  <meta name="theme-color" content="#0b1324" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%233b82f6'/><stop offset='1' stop-color='%2322d3ee'/></linearGradient></defs><rect x='8' y='8' width='48' height='48' rx='12' fill='url(%23g)'/><circle cx='24' cy='24' r='5' fill='%23ffffff' fill-opacity='.95'/><circle cx='28' cy='24' r='2' fill='%23091021' fill-opacity='.9'/><rect x='30' y='34' width='18' height='6' rx='3' fill='%23091021' fill-opacity='.9'/></svg>" />
+  <link rel="shortcut icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%233b82f6'/><stop offset='1' stop-color='%2322d3ee'/></linearGradient></defs><rect x='8' y='8' width='48' height='48' rx='12' fill='url(%23g)'/><circle cx='24' cy='24' r='5' fill='%23ffffff' fill-opacity='.95'/><circle cx='28' cy='24' r='2' fill='%23091021' fill-opacity='.9'/><rect x='30' y='34' width='18' height='6' rx='3' fill='%23091021' fill-opacity='.9'/></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0b1324;--fg:#0e1726;--card:#111a2e;--muted:#93a0b8;--text:#e6ecfa;--brand:#3b82f6;--brand-2:#22d3ee;--accent:#10b981;--danger:#ef4444;--shadow:0 20px 40px rgba(0,0,0,.35);--radius:18px;--container:1200px}
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:linear-gradient(180deg,#0a1226 0%,#0d1630 55%,#0e1a38 100%);color:var(--text);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    .container{max-width:var(--container);margin-inline:auto;padding-inline:20px}
+    header{position:sticky;top:0;z-index:50;backdrop-filter:saturate(1.2) blur(8px);background:rgba(10,18,38,.55);border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:68px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.3px}
+    .brand .logo{width:38px;height:38px;border-radius:10px;background:radial-gradient(circle at 30% 30%,var(--brand) 0,var(--brand-2) 60%,transparent 62%),linear-gradient(135deg,rgba(255,255,255,.2),rgba(255,255,255,0) 60%);box-shadow:0 6px 20px rgba(34,211,238,.35)}
+    nav ul{display:flex;gap:22px;list-style:none;padding:0;margin:0}
+    nav a{color:var(--text);text-decoration:none;font-weight:500;opacity:.92}
+    nav a:hover{opacity:1}
+    .btn{appearance:none;border:0;cursor:pointer;font-weight:600;padding:12px 18px;border-radius:12px}
+    .btn-primary{background:linear-gradient(90deg,var(--brand),var(--brand-2));color:#091021;box-shadow:0 10px 24px rgba(59,130,246,.35)}
+    .btn-outline{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,.15)}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,.15);color:var(--text)}
+    .btn-whatsapp{background:linear-gradient(90deg,#25D366,#128C7E);color:#03110b;box-shadow:0 10px 24px rgba(18,140,126,.35)}
+
+    .badge{display:inline-block;font-size:12px;padding:6px 10px;border-radius:999px;background:rgba(16,185,129,.12);color:#9afbd3;border:1px solid rgba(16,185,129,.35)}
+    .pill{border:1px solid rgba(255,255,255,.12);padding:10px 14px;border-radius:999px;color:#bcd0ff;font-size:14px}
+
+    .hero{position:relative;overflow:hidden}
+    .hero::before{content:"";position:absolute;inset:-40% -10% auto -10%;height:80vh;min-height:420px;background:radial-gradient(60% 60% at 60% 40%,rgba(59,130,246,.28),transparent 60%),radial-gradient(50% 50% at 40% 60%,rgba(34,211,238,.23),transparent 62%);filter:blur(22px);pointer-events:none}
+    .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:46px 46px;mask-image:linear-gradient(to bottom,rgba(0,0,0,.6),rgba(0,0,0,0));pointer-events:none}
+    .hero .wrap{display:grid;grid-template-columns:1.15fr 1fr;align-items:center;gap:38px;padding:84px 0}
+    h1{font-size:clamp(32px,3.5vw,52px);line-height:1.05;margin:0 0 12px;font-weight:800}
+    p.lead{font-size:clamp(16px,1.5vw,20px);color:var(--muted);margin:0 0 26px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap}
+    .statbar{display:flex;gap:18px;flex-wrap:wrap;margin-top:28px}
+
+    section{padding:64px 0}
+    h2{font-size:clamp(26px,2.4vw,36px);margin:0 0 22px}
+
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+    .stack{display:grid;gap:12px}
+
+    .card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+    .card h3{margin:0 0 10px}
+    .muted{color:var(--muted)}
+
+    .program-card .price{font-weight:800;font-size:22px;color:#d6f9ff}
+    .program-card footer{display:flex;justify-content:space-between;align-items:center;margin-top:18px}
+    .thumb{height:140px;border-radius:16px;background:#0f1a32;border:1px solid rgba(255,255,255,.08);display:grid;place-items:center;margin-bottom:12px;overflow:hidden;position:relative;box-shadow:var(--shadow)}
+    .thumb.video{background:radial-gradient(120% 100% at 10% 10%, rgba(59,130,246,.35), transparent 60%), radial-gradient(120% 100% at 90% 90%, rgba(34,211,238,.28), transparent 60%), #0f1a32}
+    .thumb.avatar{background:radial-gradient(120% 100% at 15% 20%, rgba(139,92,246,.35), transparent 60%), radial-gradient(120% 100% at 85% 80%, rgba(16,185,129,.28), transparent 60%), #0f1a32}
+    .thumb.learn{background:radial-gradient(120% 100% at 20% 20%, rgba(250,204,21,.35), transparent 60%), radial-gradient(120% 100% at 80% 80%, rgba(59,130,246,.25), transparent 60%), #0f1a32}
+    .thumb.ml{background:radial-gradient(120% 100% at 15% 25%, rgba(34,197,94,.35), transparent 60%), radial-gradient(120% 100% at 85% 75%, rgba(59,130,246,.28), transparent 60%), #0f1a32}
+    .thumb.adv{background:radial-gradient(120% 100% at 20% 20%, rgba(244,63,94,.32), transparent 60%), radial-gradient(120% 100% at 85% 80%, rgba(99,102,241,.28), transparent 60%), #0f1a2e}
+    .thumb svg{width:70%;max-width:260px;opacity:.95;filter:drop-shadow(0 10px 24px rgba(0,0,0,.35))}
+
+    .hero-copy{position:relative;isolation:isolate;padding:24px 22px 18px;border-radius:20px;border:1px solid rgba(255,255,255,.06);background:
+      radial-gradient(120% 120% at 8% 0%, rgba(59,130,246,.18), transparent 60%),
+      radial-gradient(120% 120% at 92% 60%, rgba(34,211,238,.16), transparent 65%),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 420'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%233b82f6' stop-opacity='.55'/><stop offset='1' stop-color='%2322d3ee' stop-opacity='.45'/></linearGradient></defs><g fill='none' stroke='url(%23g)' stroke-width='1.4' opacity='.8'><path d='M40 300 L170 240 L300 280 L430 210 L560 240 L690 180 L820 210 L950 170 L1080 200'/><path d='M40 250 L170 190 L300 230 L430 160 L560 200 L690 150 L820 180 L950 140 L1080 170'/></g><g fill='%23a5b4fc' opacity='.35'><circle cx='170' cy='240' r='4'/><circle cx='300' cy='280' r='4'/><circle cx='430' cy='210' r='4'/><circle cx='560' cy='240' r='4'/><circle cx='690' cy='180' r='4'/><circle cx='820' cy='210' r='4'/><circle cx='950' cy='170' r='4'/></g></svg>");
+      background-repeat:no-repeat;background-size:cover;background-position:center top;box-shadow:inset 0 0 0 9999px rgba(11,19,36,.18)}
+    .hero-copy h1{margin-top:6px}
+
+    .banner{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;border:1px solid rgba(16,185,129,.35);background:rgba(16,185,129,.1);color:#b7ffdf;margin-top:14px}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+    .step{background:rgba(255,255,255,.04);border:1px dashed rgba(255,255,255,.12);border-radius:14px;padding:14px}
+    .avatar{width:38px;height:38px;border-radius:999px;background:#1a2543;border:1px solid rgba(255,255,255,.1)}
+    .row-flex{display:flex;gap:12px;align-items:flex-start}
+    details{border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:12px 14px;background:rgba(255,255,255,.03)}
+    details+details{margin-top:10px}
+    summary{cursor:pointer;font-weight:600}
+
+    .overlay{position:fixed;inset:0;background:rgba(8,12,22,.6);opacity:0;pointer-events:none;transition:.25s ease;z-index:90}
+    .drawer{position:fixed;top:0;right:0;height:100%;width:min(460px,92vw);background:#0b1324;border-left:1px solid rgba(255,255,255,.08);transform:translateX(100%);transition:transform .3s cubic-bezier(.2,.75,.2,1);z-index:100;display:flex;flex-direction:column}
+    .drawer.open{transform:translateX(0)}.overlay.show{opacity:1;pointer-events:auto}
+    .drawer header{padding:18px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.08)}
+    .drawer main{padding:18px;overflow:auto}
+    .drawer footer{padding:16px 18px;border-top:1px solid rgba(255,255,255,.08);display:flex;gap:10px}
+    .field{display:grid;gap:8px;margin:12px 0}.field label{font-size:13px;color:#b9c7e6}
+    .input,select,textarea{width:100%;padding:12px 14px;border-radius:12px;background:#0f1a32;color:var(--text);border:1px solid rgba(255,255,255,.1)}
+    textarea{min-height:88px;resize:vertical}
+    .row{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+
+    .toast{position:fixed;right:14px;bottom:14px;background:#102040;border:1px solid rgba(255,255,255,.1);color:#dfe8ff;padding:12px 14px;border-radius:12px;box-shadow:var(--shadow);opacity:0;transform:translateY(10px);transition:.25s ease;z-index:120}
+    .toast.show{opacity:1;transform:translateY(0)}
+
+    @media (max-width: 920px){
+      .hero .wrap{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr}
+      .grid-2{grid-template-columns:1fr}
+      .steps{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand"><div class="logo"></div> AI Training Cameroon</div>
+      <nav class="desktop">
+        <ul>
+          <li><a href="#why">Pourquoi nous</a></li>
+          <li><a href="#programs">Programmes</a></li>
+          <li><a href="#workshop">Atelier gratuit</a></li>
+          <li><a href="#results">Résultats</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#payment">Paiement</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a class="btn btn-outline" href="/" lang="en" hreflang="en">EN</a></li>
+        </ul>
+      </nav>
+      <button class="btn btn-primary" data-scroll="#programs">Réserver votre place</button>
+    </div>
+  </header>
+
+  <!-- … le reste du BODY FR est identique (sections, cartes, JS) … -->
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="drawer" id="drawer">…</aside>
+
+  <div class="toast" id="toast">Lien WhatsApp ouvert dans un nouvel onglet.</div>
+
+  <script>
+    /* CONFIG RAPIDE (FR) */
+    const COHORT_ISO_DATE='2025-09-02';
+    const WHATSAPP_NUMBER='237695517054';
+    const PROGRAM_PDF_HREF='/docs/Programme_Formation_IA_FR.pdf';
+    const BETA_ACTIVE=true, BETA_DISCOUNT=0.40, BETA_PLACES=12;
+
+    const fmtPrice=(x)=> new Intl.NumberFormat('fr-FR').format(Math.round(x)) + ' FCFA';
+    const fmtDate =(iso)=> new Date(iso+'T12:00:00').toLocaleDateString('fr-FR',{day:'numeric',month:'short',year:'numeric'}).replace('.', '');
+
+    const qs=(s,el=document)=>el.querySelector(s);
+    const qsa=(s,el=document)=>[...el.querySelectorAll(s)];
+
+    qsa('[data-scroll]').forEach(btn=>btn.addEventListener('click',e=>{
+      const id=btn.getAttribute('data-scroll'); const el=qs(id);
+      if(el){ e.preventDefault(); window.scrollTo({top:el.offsetTop-60,behavior:'smooth'}); }
+    }));
+
+    const cohortText=fmtDate(COHORT_ISO_DATE);
+    qs('#cohort-chip').textContent=cohortText;
+    qs('#f-cohorte').value=cohortText;
+    qs('#year').textContent=new Date().getFullYear();
+    qs('#cta-pdf').href=PROGRAM_PDF_HREF;
+    qs('#beta-discount').textContent='-'+Math.round(BETA_DISCOUNT*100)+'%';
+    if(!BETA_ACTIVE){ qsa('#b-beta-vid,#b-beta-avatar,#beta-banner').forEach(el=>el&&(el.style.display='none')); }
+
+    const packSelect=qs('#packSelect'); const modeSelect=qs('#modeSelect');
+    function recomputePrices(){
+      const pack=packSelect.value;
+      qsa('.program-card').forEach(card=>{
+        const base=+card.dataset.base, upPro=+(card.dataset.proUp||0), upMentor=+(card.dataset.mentoratUp||0);
+        let price=base;
+        if(pack==='pro') price+=upPro;
+        if(pack==='mentorat') price+=upMentor;
+        if(BETA_ACTIVE && card.dataset.beta==='true') price=price*(1-BETA_DISCOUNT);
+        qs('[data-price]',card).textContent=fmtPrice(price);
+        card.dataset.currentPrice=String(Math.round(price));
+        card.dataset.selectedPack=(pack==='essentiel'?'Essentiel':pack==='pro'?'Pro':'Mentorat');
+      });
+    }
+    packSelect.addEventListener('change',recomputePrices); recomputePrices();
+
+    const overlay=qs('#overlay'), drawer=qs('#drawer'), toast=qs('#toast');
+    function openDrawer(data){
+      qs('#f-program').value=data.course;
+      qs('#f-pack').value=(data.pack||'Essentiel');
+      qs('#f-prix').value=fmtPrice(+data.price);
+      qs('#f-plan').value=(modeSelect.value.includes('2')?'2 échéances':'Paiement comptant');
+      drawer.classList.add('open'); overlay.classList.add('show'); document.body.style.overflow='hidden';
+    }
+    function closeDrawer(){ drawer.classList.remove('open'); overlay.classList.remove('show'); document.body.style.overflow=''; }
+    qsa('.btn-reserver').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const card=btn.closest('.program-card');
+        openDrawer({course:card.dataset.course, price:card.dataset.currentPrice||card.dataset.base, pack:card.dataset.selectedPack||'Essentiel'});
+      });
+    });
+    qs('#drawerClose').onclick=closeDrawer; qs('#drawerCancel').onclick=closeDrawer; overlay.addEventListener('click',closeDrawer);
+
+    qs('#f-pack').addEventListener('change',()=>{
+      const course=qs('#f-program').value; const card=qsa('.program-card').find(c=>c.dataset.course===course); if(!card) return;
+      const chosen=qs('#f-pack').value.toLowerCase();
+      const base=+card.dataset.base, upPro=+(card.dataset.proUp||0), upMentor=+(card.dataset.mentoratUp||0);
+      let price=base; if(chosen==='pro') price+=upPro; if(chosen.includes('mentor')) price+=upMentor;
+      if(BETA_ACTIVE && card.dataset.beta==='true') price=price*(1-BETA_DISCOUNT);
+      qs('#f-prix').value=fmtPrice(price);
+    });
+
+    function openWhatsApp(prefilled){
+      if(!WHATSAPP_NUMBER || !/^\d{9,15}$/.test(WHATSAPP_NUMBER)){ alert('Merci de configurer votre numéro WhatsApp.'); return false; }
+      const url1=`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(prefilled)}`;
+      const url2=`https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(prefilled)}`;
+      let opened=false; try{const w=window.open(url1,'_blank'); opened=!!w;}catch(e){}
+      if(!opened){ try{ window.location.href=url1; opened=true; }catch(e){} }
+      if(!opened){ window.location.href=url2; }
+      toast.classList.add('show'); setTimeout(()=>toast.classList.remove('show'),3200); return true;
+    }
+    function waGreeting(program){ return `Bonjour 👋 Je souhaite réserver une place pour « ${program} » (cohorte ${cohortText}). Pouvez-vous confirmer ?`; }
+
+    qs('#cta-call').addEventListener('click',()=> openWhatsApp(`Bonjour 👋 Je souhaite un appel découverte (cohorte ${cohortText}).`) );
+    qs('#cta-workshop').addEventListener('click',()=> openWhatsApp(`Bonjour 👋 Je m’inscris à l’atelier gratuit avant la cohorte du ${cohortText}.`) );
+    qs('#cta-workshop-cal').addEventListener('click',()=> openWhatsApp(`Bonjour 👋 Merci de m’envoyer la date et un rappel pour l’atelier. Mon nom : …`) );
+    qs('#cta-whatsapp-contact').addEventListener('click',()=> openWhatsApp('Bonjour 👋 J’ai une question sur les formations IA.') );
+    qs('#cta-whatsapp-results')?.addEventListener('click',()=> openWhatsApp('Bonjour 👋 Avez-vous des exemples de projets/témoignages ?') );
+
+    qs('#sendWA').addEventListener('click',()=>{
+      const v=(id)=>qs(id).value.trim();
+      if(!v('#f-nom')||!v('#f-whatsapp')){ alert('Le nom complet et le WhatsApp de l’apprenant sont requis.'); return; }
+      const message=`Nouvelle réservation – ${v('#f-program')}\nFormule : ${qs('#f-pack').value}\nMontant : ${v('#f-prix')}\nPlan : ${qs('#f-plan').value}\nCohorte : ${v('#f-cohorte')}\nNom : ${v('#f-nom')}\nWhatsApp apprenant : ${v('#f-whatsapp')}\nVille : ${v('#f-ville')||'-'}\nPaiement : ${qs('#f-mode').value}\nNotes : ${v('#f-notes')||'-'}\nSource : Site web`;
+      openWhatsApp(message)&&closeDrawer();
+    });
+
+    qs('#cta-pdf').addEventListener('click',()=>{
+      openWhatsApp(`Bonjour 👋 Je télécharge le PDF du programme + cours d’essai. Merci de m’ajouter au groupe d’info pour la cohorte du ${cohortText}.`);
+    });
+
+    qsa('.program-card').forEach(card=>{
+      card.addEventListener('dblclick',()=> openWhatsApp(waGreeting(card.dataset.course)) );
+    });
+  </script>
+
+  <script> window.va = window.va || function(){ (window.vaq=window.vaq||[]).push(arguments); }; </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
