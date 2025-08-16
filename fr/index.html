@@ -3,8 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AI Training Cameroon – Formations (v2)</title>
-<!-- Favicon & theme color -->
+  <title>AI Training Cameroon – Formations (FR)</title>
   <meta name="theme-color" content="#0b1324" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%233b82f6'/><stop offset='1' stop-color='%2322d3ee'/></linearGradient></defs><rect x='8' y='8' width='48' height='48' rx='12' fill='url(%23g)'/><circle cx='24' cy='24' r='5' fill='%23ffffff' fill-opacity='.95'/><circle cx='28' cy='24' r='2' fill='%23091021' fill-opacity='.9'/><rect x='30' y='34' width='18' height='6' rx='3' fill='%23091021' fill-opacity='.9'/></svg>" />
   <link rel="shortcut icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%233b82f6'/><stop offset='1' stop-color='%2322d3ee'/></linearGradient></defs><rect x='8' y='8' width='48' height='48' rx='12' fill='url(%23g)'/><circle cx='24' cy='24' r='5' fill='%23ffffff' fill-opacity='.95'/><circle cx='28' cy='24' r='2' fill='%23091021' fill-opacity='.9'/><rect x='30' y='34' width='18' height='6' rx='3' fill='%23091021' fill-opacity='.9'/></svg>" />
@@ -54,7 +53,7 @@
     .card h3{margin:0 0 10px}
     .muted{color:var(--muted)}
 
-    /* Programmes */
+    /* Programs */
     .program-card .price{font-weight:800;font-size:22px;color:#d6f9ff}
     .program-card footer{display:flex;justify-content:space-between;align-items:center;margin-top:18px}
     .thumb{height:140px;border-radius:16px;background:#0f1a32;border:1px solid rgba(255,255,255,.08);display:grid;place-items:center;margin-bottom:12px;overflow:hidden;position:relative;box-shadow:var(--shadow)}
@@ -65,7 +64,7 @@
     .thumb.adv{background:radial-gradient(120% 100% at 20% 20%, rgba(244,63,94,.32), transparent 60%), radial-gradient(120% 100% at 85% 80%, rgba(99,102,241,.28), transparent 60%), #0f1a32}
     .thumb svg{width:70%;max-width:260px;opacity:.95;filter:drop-shadow(0 10px 24px rgba(0,0,0,.35))}
 
-    /* Hero copy panel */
+    /* Bloc texte hero */
     .hero-copy{position:relative;isolation:isolate;padding:24px 22px 18px;border-radius:20px;border:1px solid rgba(255,255,255,.06);background:
       radial-gradient(120% 120% at 8% 0%, rgba(59,130,246,.18), transparent 60%),
       radial-gradient(120% 120% at 92% 60%, rgba(34,211,238,.16), transparent 65%),
@@ -73,23 +72,18 @@
       background-repeat:no-repeat;background-size:cover;background-position:center top;box-shadow:inset 0 0 0 9999px rgba(11,19,36,.18)}
     .hero-copy h1{margin-top:6px}
 
-    /* Banner promo */
     .banner{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;border:1px solid rgba(16,185,129,.35);background:rgba(16,185,129,.1);color:#b7ffdf;margin-top:14px}
 
-    /* Steps */
     .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
     .step{background:rgba(255,255,255,.04);border:1px dashed rgba(255,255,255,.12);border-radius:14px;padding:14px}
 
-    /* Testimonials / Cases */
     .avatar{width:38px;height:38px;border-radius:999px;background:#1a2543;border:1px solid rgba(255,255,255,.1)}
     .row-flex{display:flex;gap:12px;align-items:flex-start}
 
-    /* FAQ */
     details{border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:12px 14px;background:rgba(255,255,255,.03)}
     details+details{margin-top:10px}
     summary{cursor:pointer;font-weight:600}
 
-    /* Drawer */
     .overlay{position:fixed;inset:0;background:rgba(8,12,22,.6);opacity:0;pointer-events:none;transition:.25s ease;z-index:90}
     .drawer{position:fixed;top:0;right:0;height:100%;width:min(460px,92vw);background:#0b1324;border-left:1px solid rgba(255,255,255,.08);transform:translateX(100%);transition:transform .3s cubic-bezier(.2,.75,.2,1);z-index:100;display:flex;flex-direction:column}
     .drawer.open{transform:translateX(0)}.overlay.show{opacity:1;pointer-events:auto}
@@ -101,11 +95,9 @@
     textarea{min-height:88px;resize:vertical}
     .row{display:grid;gap:12px;grid-template-columns:1fr 1fr}
 
-    /* Toast */
     .toast{position:fixed;right:14px;bottom:14px;background:#102040;border:1px solid rgba(255,255,255,.1);color:#dfe8ff;padding:12px 14px;border-radius:12px;box-shadow:var(--shadow);opacity:0;transform:translateY(10px);transition:.25s ease;z-index:120}
     .toast.show{opacity:1;transform:translateY(0)}
 
-    /* Responsive */
     @media (max-width: 920px){
       .hero .wrap{grid-template-columns:1fr}
       .grid-3{grid-template-columns:1fr}
@@ -122,15 +114,16 @@
         <ul>
           <li><a href="#why">Pourquoi nous</a></li>
           <li><a href="#programs">Programmes</a></li>
-          <li><a href="#atelier">Atelier gratuit</a></li>
-          <li><a href="#temoignages">Témoignages</a></li>
+          <li><a href="#workshop">Atelier gratuit</a></li>
+          <li><a href="#results">Résultats</a></li>
           <li><a href="#faq">FAQ</a></li>
-          <li><a href="#paiement">Paiement</a></li>
+          <li><a href="#payment">Paiement</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a class="btn btn-outline" href="/">EN</a></li>
+          <!-- Switch langue : EN vers la racine -->
+          <li><a class="btn btn-outline" href="/" lang="en" hreflang="en">EN</a></li>
         </ul>
       </nav>
-      <button class="btn btn-primary" data-scroll="#programs">Réserver sa place</button>
+      <button class="btn btn-primary" data-scroll="#programs">Réserver votre place</button>
     </div>
   </header>
 
@@ -138,29 +131,29 @@
     <div class="hero-grid"></div>
     <div class="container wrap">
       <div class="hero-copy">
-        <h1><span id="hero-title">Passe de zéro à monétiser avec l’IA en 30–60 jours</span></h1>
-        <p class="lead">Formations IA 100% orientées résultats au Cameroun : <strong>vidéos IA</strong>, <strong>avatars/VTuber</strong>, <strong>fondamentaux & ML</strong>. Cours du soir/week‑end + replays. Cohortes, projets concrets & accompagnement local.</p>
+        <h1><span id="hero-title">Passez de 0 à la monétisation avec l’IA en 30–60 jours</span></h1>
+        <p class="lead">Formations IA orientées résultats au Cameroun : <strong>vidéo IA</strong>, <strong>avatars/VTuber</strong>, <strong>bases & ML</strong>. Soir/week-end + replays. Cohortes, projets concrets & accompagnement local.</p>
         <div class="cta">
           <button class="btn btn-primary" data-scroll="#programs" id="cta-main">Réserver – Cohorte <span id="cohort-chip"></span></button>
-          <a class="btn btn-outline" id="cta-pdf" href="#" download>Programme PDF + cours d’essai</a>
-          <button class="btn btn-outline" id="cta-call">Appel découverte 10 min</button>
+          <a class="btn btn-outline" id="cta-pdf" href="#" download>PDF du programme + cours d’essai</a>
+          <button class="btn btn-outline" id="cta-call">Appel découverte 10 min</button>
         </div>
-        <div class="banner"><strong>Promo Bêta – <span id="beta-discount">-40%</span></strong> sur 12 places · Garantie satisfait ou remboursé 7 jours</div>
+        <div class="banner"><strong>Promo Bêta – <span id="beta-discount">-40%</span></strong> sur 12 places · Garantie satisfaite ou remboursée 7 jours</div>
         <div class="statbar">
-          <span class="pill">Cours du soir & week‑end</span>
-          <span class="pill">Paiement en 2 tranches possible</span>
+          <span class="pill">Cours soir & week-end</span>
+          <span class="pill">Paiement en plusieurs fois</span>
           <span class="pill">Monétisation réseaux sociaux</span>
-          <span class="pill">Certification incluse</span>
+          <span class="pill">Certificat inclus</span>
         </div>
       </div>
       <div>
         <div class="card" style="min-height:260px;display:grid;place-items:center;text-align:center">
-          <h3 style="margin:0 0 6px">Accompagnement & Support</h3>
-          <p class="muted">Présentiel et live en ligne. Projets adaptés au marché local. Groupe WhatsApp + replays.</p>
+          <h3 style="margin:0 0 6px">Mentorat & Support</h3>
+          <p class="muted">Présentiel et 100% en ligne. Projets adaptés au marché local. Groupe WhatsApp + replays.</p>
           <div class="steps">
-            <div class="step"><b>1.</b> Choisir un programme</div>
-            <div class="step"><b>2.</b> Réserver sa place</div>
-            <div class="step"><b>3.</b> Démarrer à la date de cohorte</div>
+            <div class="step"><b>1.</b> Choisissez un programme</div>
+            <div class="step"><b>2.</b> Réservez votre place</div>
+            <div class="step"><b>3.</b> Démarrez à la date de cohorte</div>
           </div>
         </div>
       </div>
@@ -169,22 +162,22 @@
 
   <section id="why">
     <div class="container">
-      <h2>Pourquoi choisir nos formations ?</h2>
+      <h2>Pourquoi nous choisir ?</h2>
       <div class="grid-3">
-        <div class="card"><h3>Orientées résultats</h3><p class="muted">Des projets concrets (Reels/UGC, avatars, tableaux de bord ML) directement monétisables.</p></div>
-        <div class="card"><h3>Flexibilité</h3><p class="muted">Présentiel / 100% en ligne, horaires adaptables, replays disponibles.</p></div>
-        <div class="card"><h3>Encadrement local</h3><p class="muted">Formateurs basés au Cameroun, communauté d’entraide, portfolio <i>job‑ready</i>.</p></div>
+        <div class="card"><h3>Orienté résultats</h3><p class="muted">Projets pratiques (Reels/UGC, avatars, dashboards ML) monétisables immédiatement.</p></div>
+        <div class="card"><h3>Flexibilité</h3><p class="muted">Présentiel / 100% en ligne, horaires flexibles, replays disponibles.</p></div>
+        <div class="card"><h3>Accompagnement local</h3><p class="muted">Formateurs basés au Cameroun, communauté bienveillante, portfolio prêt à l’emploi.</p></div>
       </div>
     </div>
   </section>
 
   <section id="programs">
     <div class="container">
-      <h2>Programmes de Formation</h2>
-      <p class="muted">Chaque programme existe en 3 packs : <b>Essentiel</b> (cours + replays), <b>Pro</b> (+ coaching de groupe & modèles), <b>Mentorat</b> (+ 1‑1 & aide 1er client). <span class="badge">Garantie 7 jours</span></p>
+      <h2>Programmes</h2>
+      <p class="muted">Chaque programme existe en 3 formules : <b>Essentiel</b> (cours + replays), <b>Pro</b> (+ coaching groupe & templates), <b>Mentorat</b> (+ 1-1 & aide pour décrocher votre premier client). <span class="badge">Garantie 7 jours</span></p>
       <div class="grid-3">
         <!-- VIDEO IA -->
-        <article class="card program-card" data-course="Création de vidéos par IA (UGC & Reels)" data-base="40000" data-pro-up="20000" data-mentorat-up="60000" data-beta="true">
+        <article class="card program-card" data-course="Création vidéo IA (UGC & Reels)" data-base="40000" data-pro-up="20000" data-mentorat-up="60000" data-beta="true">
           <div class="thumb video">
             <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
               <rect x="20" y="24" width="120" height="80" rx="12" fill="#0b1324" stroke="rgba(255,255,255,0.15)"/>
@@ -194,20 +187,20 @@
               <circle cx="50" cy="112" r="4" fill="rgba(255,255,255,0.18)"/>
             </svg>
           </div>
-          <h3>Création de vidéos par IA (UGC & Reels)</h3>
-          <p class="muted">1 mois · CapCut AI, Runway/Motion, prompts, workflows TikTok/Reels/Shorts, pack de modèles.</p>
+          <h3>Création vidéo IA (UGC & Reels)</h3>
+          <p class="muted">1 mois · CapCut IA, Runway/Motion, prompts, workflows TikTok/Reels/Shorts, pack de templates.</p>
           <div class="stack">
-            <div><span class="badge" style="background:rgba(59,130,246,.18); color:#d9e8ff; border-color:rgba(59,130,246,.35)">Monétisation</span> <span class="badge" id="b-beta-vid">Bêta – -40%</span></div>
-            <div class="muted">Projet final : 10 Reels montés + 1 offre UGC vendable.</div>
+            <div><span class="badge" style="background:rgba(59,130,246,.18); color:#d9e8ff; border-color:rgba(59,130,246,.35)">Monétisation</span> <span class="badge" id="b-beta-vid">Bêta – -40%</span></div>
+            <div class="muted">Projet final : 10 Reels montés + 1 offre UGC vendable.</div>
           </div>
           <footer>
-            <span class="price" data-price>40 000 FCFA</span>
+            <span class="price" data-price>40 000 FCFA</span>
             <button class="btn btn-primary btn-reserver">Réserver</button>
           </footer>
         </article>
 
         <!-- AVATAR -->
-        <article class="card program-card" data-course="Création de personnages IA (Avatars/VTuber)" data-base="80000" data-pro-up="30000" data-mentorat-up="70000" data-beta="true">
+        <article class="card program-card" data-course="Personnages IA (Avatars/VTuber)" data-base="80000" data-pro-up="30000" data-mentorat-up="70000" data-beta="true">
           <div class="thumb avatar">
             <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
               <circle cx="100" cy="62" r="26" fill="rgba(59,130,246,0.5)"/>
@@ -219,20 +212,20 @@
               <rect x="94" y="102" width="34" height="8" rx="4" fill="#0b1324"/>
             </svg>
           </div>
-          <h3>Création de personnages IA (Avatars/VTuber)</h3>
-          <p class="muted">2 mois · Avatars IA, voix/clonage, lip‑sync, OBS/live, scripts & tunnels de vente.</p>
+          <h3>Personnages IA (Avatars/VTuber)</h3>
+          <p class="muted">2 mois · avatars IA, voix/clonage, lip-sync, OBS/live, scripts & tunnels de vente.</p>
           <div class="stack">
-            <div><span class="badge" style="background:rgba(16,185,129,.18); color:#caffe8f; border-color:rgba(16,185,129,.35)">Monétisation</span> <span class="badge" id="b-beta-avatar">Bêta – -40%</span></div>
-            <div class="muted">Projet final : chaîne VTuber prête + 3 scripts d’offre.</div>
+            <div><span class="badge" style="background:rgba(16,185,129,.18); color:#caffe8f; border-color:rgba(16,185,129,.35)">Monétisation</span> <span class="badge" id="b-beta-avatar">Bêta – -40%</span></div>
+            <div class="muted">Projet final : chaîne VTuber prête + 3 scripts de vente.</div>
           </div>
           <footer>
-            <span class="price" data-price>80 000 FCFA</span>
+            <span class="price" data-price>80 000 FCFA</span>
             <button class="btn btn-primary btn-reserver">Réserver</button>
           </footer>
         </article>
 
-        <!-- FONDAMENTAUX -->
-        <article class="card program-card" data-course="Fondamentaux de l’IA" data-base="30000" data-pro-up="15000" data-mentorat-up="50000">
+        <!-- BASES IA -->
+        <article class="card program-card" data-course="Bases de l’IA" data-base="30000" data-pro-up="15000" data-mentorat-up="50000">
           <div class="thumb learn">
             <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
               <rect x="30" y="60" width="40" height="40" rx="8" fill="rgba(250,204,21,0.85)"/>
@@ -240,14 +233,14 @@
               <rect x="130" y="36" width="40" height="64" rx="8" fill="rgba(34,211,238,0.85)"/>
             </svg>
           </div>
-          <h3>Fondamentaux de l’IA</h3>
-          <p class="muted">1 mois · Fondamentaux, logique IA, premiers modèles ML.</p>
+          <h3>Bases de l’IA</h3>
+          <p class="muted">1 mois · Concepts clés, logique IA, premiers modèles ML.</p>
           <div class="stack">
             <div><span class="badge">Débutant</span></div>
-            <div class="muted">Projet final : mini‑projet ML noté + attestation.</div>
+            <div class="muted">Projet final : mini-projet ML noté + certificat.</div>
           </div>
           <footer>
-            <span class="price" data-price>30 000 FCFA</span>
+            <span class="price" data-price>30 000 FCFA</span>
             <button class="btn btn-primary btn-reserver">Réserver</button>
           </footer>
         </article>
@@ -264,18 +257,18 @@
             </svg>
           </div>
           <h3>Machine Learning & Data Science</h3>
-          <p class="muted">3 mois · Régression, classification, évaluation, data wrangling.</p>
+          <p class="muted">3 mois · Régression, classification, évaluation, préparation de données.</p>
           <div class="stack">
             <div><span class="badge" style="background:rgba(59,130,246,.15);color:#cfe4ff;border-color:rgba(59,130,246,.35)">Intermédiaire</span></div>
-            <div class="muted">Projet final : tableau de bord ML + rapport.</div>
+            <div class="muted">Projet final : dashboard ML + rapport.</div>
           </div>
           <footer>
-            <span class="price" data-price>60 000 FCFA</span>
+            <span class="price" data-price>60 000 FCFA</span>
             <button class="btn btn-primary btn-reserver">Réserver</button>
           </footer>
         </article>
 
-        <!-- AVANCEE -->
+        <!-- AVANCÉ -->
         <article class="card program-card" data-course="IA avancée & Data Science" data-base="100000" data-pro-up="40000" data-mentorat-up="100000">
           <div class="thumb adv">
             <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
@@ -288,73 +281,73 @@
             </svg>
           </div>
           <h3>IA avancée & Data Science</h3>
-          <p class="muted">6 mois · Deep Learning, NLP, projets de fin d’étude.</p>
+          <p class="muted">6 mois · Deep Learning, NLP, projets de fin d’études.</p>
           <div class="stack">
             <div><span class="badge" style="background:rgba(16,185,129,.18);color:#caffe8f;border-color:rgba(16,185,129,.35)">Avancé</span></div>
-            <div class="muted">Projet final : dossier complet + soutenance.</div>
+            <div class="muted">Projet final : dossier complet + soutenance.</div>
           </div>
           <footer>
-            <span class="price" data-price>100 000 FCFA</span>
+            <span class="price" data-price>100 000 FCFA</span>
             <button class="btn btn-primary btn-reserver">Réserver</button>
           </footer>
         </article>
       </div>
 
-      <!-- Pack selector -->
+      <!-- Sélecteur de formule -->
       <div class="card" style="margin-top:18px">
-        <h3 style="margin:0 0 6px">Choisir votre pack</h3>
-        <p class="muted" style="margin-top:0">Le prix s’ajuste selon le pack. La remise Bêta s’applique sur tous les packs marqués « Bêta ».</p>
+        <h3 style="margin:0 0 6px">Choisissez votre formule</h3>
+        <p class="muted" style="margin-top:0">Le prix s’ajuste selon la formule. La remise Bêta s’applique à toutes les cartes marquées « Bêta ».</p>
         <div class="row">
           <div class="field">
-            <label>Pack</label>
+            <label>Formule</label>
             <select id="packSelect">
               <option value="essentiel">Essentiel (cours + replays)</option>
-              <option value="pro">Pro (+ coaching de groupe & modèles)</option>
-              <option value="mentorat">Mentorat (+ 1‑1 & aide 1er client)</option>
+              <option value="pro">Pro (+ coaching groupe & templates)</option>
+              <option value="mentorat">Mentorat (+ 1-1 & premier client)</option>
             </select>
           </div>
           <div class="field">
-            <label>Mode de paiement</label>
+            <label>Plan de paiement</label>
             <select id="modeSelect">
-              <option>Comptant</option>
-              <option>2 tranches (50% + 50%)</option>
+              <option>Paiement comptant</option>
+              <option>2 échéances (50% + 50%)</option>
             </select>
           </div>
         </div>
-        <small class="muted">Astuce : cliquez sur « Réserver » sur la carte du programme choisi.</small>
+        <small class="muted">Astuce : cliquez sur « Réserver » sur la carte du programme choisi.</small>
       </div>
     </div>
   </section>
 
   <!-- Atelier gratuit -->
-  <section id="atelier">
+  <section id="workshop">
     <div class="container">
-      <h2>Atelier gratuit (45 min) – <span id="atelier-title">Créer 3 Reels avec l’IA en 60 minutes</span></h2>
+      <h2>Atelier gratuit (45 min) – <span id="workshop-title">Créer 3 Reels avec l’IA en 60 minutes</span></h2>
       <div class="grid-2">
         <div class="card">
-          <h3>Ce que vous allez faire</h3>
+          <h3>Ce que vous ferez</h3>
           <ul class="stack" style="margin:0;padding-left:18px">
             <li>Générer 3 scripts + prompts et produire 3 Reels.</li>
-            <li>Mettre en place un mini‑workflow CapCut/Runway.</li>
-            <li>Pitch de 2 minutes : vendre une offre UGC localement.</li>
+            <li>Mettre en place un mini workflow CapCut/Runway.</li>
+            <li>Pitch 2 minutes : vendre une offre UGC locale.</li>
           </ul>
           <div class="cta" style="margin-top:12px">
-            <button class="btn btn-primary" id="cta-atelier">S’inscrire à l’atelier</button>
-            <button class="btn btn-outline" id="cta-atelier-cal">Recevoir la date & rappel</button>
+            <button class="btn btn-primary" id="cta-workshop">M’inscrire à l’atelier</button>
+            <button class="btn btn-outline" id="cta-workshop-cal">M’envoyer la date & un rappel</button>
           </div>
         </div>
         <div class="card">
-          <h3>Pour qui ?</h3>
-          <p class="muted">Étudiants, community managers, auto‑entrepreneurs e‑commerce, créateurs de contenu.</p>
+          <h3>Pour qui ?</h3>
+          <p class="muted">Étudiants, community managers, e-commerçants solo, créateurs de contenu.</p>
           <h3 style="margin-top:12px">Bonus</h3>
-          <p class="muted">Modèles de scripts et checklists de monétisation offerts à la fin.</p>
+          <p class="muted">Templates de scripts et checklists de monétisation inclus.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Témoignages / Études de cas (placeholders à remplacer) -->
-  <section id="temoignages">
+  <!-- Résultats -->
+  <section id="results">
     <div class="container">
       <h2>Résultats & témoignages</h2>
       <div class="grid-3">
@@ -362,8 +355,8 @@
           <div class="row-flex">
             <div class="avatar"></div>
             <div>
-              <h3 style="margin:0 0 6px">“+15 vidéos/mois”</h3>
-              <p class="muted">Boutiques à Douala (CM) & Libreville (GA) : Reels hebdos → +28% à +45% de vues en 3–5 semaines.</p>
+              <h3 style="margin:0 0 6px">« +15 vidéos / mois »</h3>
+              <p class="muted">Boutiques à Douala (CM) & Libreville (GA) : Reels hebdos → +28% à +45% de vues en 3–5 semaines.</p>
             </div>
           </div>
         </div>
@@ -371,8 +364,8 @@
           <div class="row-flex">
             <div class="avatar"></div>
             <div>
-              <h3 style="margin:0 0 6px">“1er client en 2 semaines”</h3>
-              <p class="muted">Créateurs UGC au Cameroun & sous‑région : offre simple + démo → 1er contrat en 2–3 semaines.</p>
+              <h3 style="margin:0 0 6px">« Premier client en 2 semaines »</h3>
+              <p class="muted">Créateurs UGC au Cameroun & sous-région : offre simple + démo → 1er contrat en 2–3 semaines.</p>
             </div>
           </div>
         </div>
@@ -380,37 +373,37 @@
           <div class="row-flex">
             <div class="avatar"></div>
             <div>
-              <h3 style="margin:0 0 6px">“Portfolio job‑ready”</h3>
-              <p class="muted">Étudiants (CM, GA, CG) : mini‑projets ML + rapport → stages/alternances obtenus.</p>
+              <h3 style="margin:0 0 6px">« Portfolio prêt à l’emploi »</h3>
+              <p class="muted">Étudiants (CM, GA, CG) : mini projets ML + rapport → stages/apprentissages obtenus.</p>
             </div>
           </div>
         </div>
       </div>
-      <p class="muted" style="margin-top:10px">Envie de rejoindre la prochaine cohorte ? <button class="btn btn-outline" id="cta-whatsapp-temoignage">Parler sur WhatsApp</button></p>
+      <p class="muted" style="margin-top:10px">Vous voulez rejoindre la prochaine cohorte ? <button class="btn btn-outline" id="cta-whatsapp-results">Discuter sur WhatsApp</button></p>
     </div>
   </section>
 
   <!-- Paiement & inscription -->
-  <section id="paiement">
+  <section id="payment">
     <div class="container">
       <h2>Paiement & Inscription</h2>
       <div class="grid-3">
         <div class="card">
           <h3>Options</h3>
           <ul class="stack" style="margin:0;padding-left:18px">
-            <li>Comptant (recommandé) – espèces sur place ou dépôt Mobile Money</li>
-            <li>Mobile Money : Orange Money / MTN (dépôt)</li>
-            <li>Paiement en 2 tranches possible (50% + 50%)</li>
+            <li>Paiement comptant (recommandé) – espèces sur place ou dépôt Mobile Money</li>
+            <li>Mobile Money : Orange Money / MTN (dépôt)</li>
+            <li>Plan en 2 échéances disponible (50% + 50%)</li>
           </ul>
         </div>
         <div class="card">
-          <h3>Comment procéder ?</h3>
-          <p class="muted">Cliquez sur <b>Réserver</b> sur le programme souhaité, choisissez le pack et remplissez le formulaire : la réservation arrive directement sur notre WhatsApp.</p>
-          <div class="banner" style="margin-top:12px"><b>Garantie</b> : remboursement 7 jours si vous n’êtes pas satisfait.</div>
+          <h3>Comment ça marche</h3>
+          <p class="muted">Cliquez sur <b>Réserver</b> sur votre programme, choisissez la formule et remplissez le formulaire : votre réservation part directement sur notre WhatsApp.</p>
+          <div class="banner" style="margin-top:12px"><b>Garantie</b> : remboursement sous 7 jours si vous n’êtes pas satisfait (hors frais).</div>
         </div>
         <div class="card">
           <h3>Contact</h3>
-          <p id="contact" class="muted">WhatsApp : <b>+237 695 517 054</b><br/>Bafoussam · Cameroun</p>
+          <p id="contact" class="muted">WhatsApp : <b>+237 695 517 054</b><br/>Bafoussam · Cameroun</p>
           <div class="cta"><button class="btn btn-whatsapp" id="cta-whatsapp-contact">Écrire sur WhatsApp</button></div>
         </div>
       </div>
@@ -421,25 +414,25 @@
   <section id="faq">
     <div class="container">
       <h2>FAQ</h2>
-      <details><summary>Puis‑je payer en deux tranches ?</summary><p class="muted">Oui, 50% à l’inscription et 50% avant le début du module 2.</p></details>
-      <details><summary>Et si je ne suis pas satisfait ?</summary><p class="muted">Garantie satisfait ou remboursé 7 jours (hors frais Mobile Money).</p></details>
-      <details><summary>Besoin d’un PC puissant ?</summary><p class="muted">Non pour la vidéo IA (CapCut/Runway). Recommandé pour ML avancé (8 Go RAM+).</p></details>
-      <details><summary>Attestation & débouchés</summary><p class="muted">Attestation incluse. Nous aidons à créer un portfolio et une offre vendable (UGC/VTuber/ML junior).</p></details>
+      <details><summary>Puis-je payer en deux échéances ?</summary><p class="muted">Oui, 50% à l’inscription et 50% avant le module 2.</p></details>
+      <details><summary>Et si je ne suis pas satisfait ?</summary><p class="muted">Garantie satisfaite ou remboursée 7 jours (hors frais Mobile Money).</p></details>
+      <details><summary>Ai-je besoin d’un PC puissant ?</summary><p class="muted">Non pour la vidéo IA (CapCut/Runway). Recommandé pour le ML avancé (8 Go RAM+).</p></details>
+      <details><summary>Certificat & opportunités</summary><p class="muted">Certificat inclus. On vous aide à construire un portfolio et une offre vendable (UGC/VTuber/Junior ML).</p></details>
     </div>
   </section>
 
   <footer class="site">
     <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
       <small>© <span id="year"></span> AI Training Cameroon</small>
-      <small>FR · EN</small>
+      <small><a href="/" lang="en" hreflang="en">EN</a> · <a href="/fr/" lang="fr" hreflang="fr">FR</a></small>
     </div>
   </footer>
 
-  <!-- Overlay + Drawer de réservation -->
+  <!-- Overlay + tiroir de réservation -->
   <div class="overlay" id="overlay"></div>
   <aside class="drawer" id="drawer">
     <header>
-      <strong>Finaliser votre inscription</strong>
+      <strong>Finalisez votre inscription</strong>
       <button class="close" id="drawerClose">✕</button>
     </header>
     <main>
@@ -450,7 +443,7 @@
         </div>
         <div class="row">
           <div class="field">
-            <label>Pack</label>
+            <label>Formule</label>
             <select id="f-pack" name="pack">
               <option value="Essentiel">Essentiel</option>
               <option value="Pro">Pro</option>
@@ -466,8 +459,8 @@
           <div class="field">
             <label>Plan</label>
             <select id="f-plan" name="plan">
-              <option value="Comptant">Comptant (recommandé)</option>
-              <option value="2 tranches">2 tranches (50% + 50%)</option>
+              <option value="Paiement comptant">Paiement comptant (recommandé)</option>
+              <option value="2 échéances">2 échéances (50% + 50%)</option>
             </select>
           </div>
           <div class="field">
@@ -476,33 +469,33 @@
           </div>
         </div>
         <div class="field">
-          <label>Nom & Prénom</label>
-          <input required class="input" id="f-nom" name="nom" placeholder="Ex. Paul N.">
+          <label>Nom complet</label>
+          <input required class="input" id="f-nom" name="nom" placeholder="ex. Paul N.">
         </div>
         <div class="row">
           <div class="field">
-            <label>Numéro WhatsApp de l’apprenant</label>
-            <input required class="input" id="f-whatsapp" name="whatsapp" placeholder="Ex. +2376…">
+            <label>WhatsApp de l’apprenant</label>
+            <input required class="input" id="f-whatsapp" name="whatsapp" placeholder="ex. +2376…">
           </div>
           <div class="field">
             <label>Ville</label>
-            <input class="input" id="f-ville" name="ville" placeholder="Ex. Bafoussam">
+            <input class="input" id="f-ville" name="ville" placeholder="ex. Bafoussam">
           </div>
         </div>
         <div class="field">
-          <label>Mode de paiement</label>
+          <label>Moyen de paiement</label>
           <select id="f-mode" name="mode">
-            <option>Comptant</option>
+            <option>Paiement comptant</option>
             <option>Orange Money</option>
             <option>MTN Mobile Money</option>
           </select>
         </div>
         <div class="field">
           <label>Notes</label>
-          <textarea id="f-notes" name="notes" placeholder="Indiquez une précision utile (horaires, besoins…)."></textarea>
+          <textarea id="f-notes" name="notes" placeholder="Infos utiles (disponibilités, besoins…)."></textarea>
         </div>
       </form>
-      <div class="banner" style="margin-top:4px"><b>Garantie 7 jours</b> · <span id="beta-banner">Promo Bêta active</span> · Places limitées</div>
+      <div class="banner" style="margin-top:4px"><b>Garantie 7 jours</b> · <span id="beta-banner">Promo Bêta active</span> · Places limitées</div>
     </main>
     <footer>
       <button type="button" class="btn btn-whatsapp" id="sendWA">Envoyer sur WhatsApp</button>
@@ -514,33 +507,33 @@
 
   <script>
     /* =============================
-      CONFIG RAPIDE
-      - Modifiez COHORT_ISO_DATE pour changer la date de cohorte.
-      - Modifiez WHATSAPP_NUMBER pour votre numéro pro (sans + ni espaces).
-      - Remplacez PROGRAM_PDF_HREF par le lien vers votre PDF programme.
-      - Pour activer/désactiver la promo bêta, changez BETA_ACTIVE et BETA_DISCOUNT.
+      CONFIG RAPIDE (FR)
+      - COHORT_ISO_DATE : date de démarrage de la cohorte.
+      - WHATSAPP_NUMBER : numéro WhatsApp pro (sans + ni espaces).
+      - PROGRAM_PDF_HREF : lien du PDF programme FR.
+      - BETA_ACTIVE / BETA_DISCOUNT : activer/désactiver la promo Bêta.
     ============================== */
     const COHORT_ISO_DATE = '2025-09-02';
-    const WHATSAPP_NUMBER = '237695517054'; // format international sans + ni espaces
-    const PROGRAM_PDF_HREF = '/docs/Programme_AI_Training_Cameroon.pdf';
+    const WHATSAPP_NUMBER = '237695517054';
+    const PROGRAM_PDF_HREF = '/docs/Programme_Formation_IA_FR.pdf';
     const BETA_ACTIVE   = true;
     const BETA_DISCOUNT = 0.40; // 40%
     const BETA_PLACES   = 12;
 
-    const fmtPrice = (x)=> new Intl.NumberFormat('fr-FR').format(Math.round(x)) + ' FCFA';
+    const fmtPrice = (x)=> new Intl.NumberFormat('fr-FR').format(Math.round(x)) + ' FCFA';
     const fmtDate  = (iso)=> new Date(iso+'T12:00:00').toLocaleDateString('fr-FR',{day:'numeric',month:'short',year:'numeric'}).replace('.', '');
 
     const qs = (s, el=document) => el.querySelector(s);
     const qsa = (s, el=document) => [...el.querySelectorAll(s)];
 
-    // Header smooth scroll
+    // Scroll doux
     qsa('[data-scroll]').forEach(btn=>btn.addEventListener('click', e=>{
       const id = btn.getAttribute('data-scroll');
       const el = qs(id);
       if(el){ e.preventDefault(); window.scrollTo({top:el.offsetTop-60, behavior:'smooth'}); }
     }));
 
-    // Init dynamic texts
+    // Textes dynamiques
     const cohortText = fmtDate(COHORT_ISO_DATE);
     qs('#cohort-chip').textContent = cohortText;
     qs('#f-cohorte').value = cohortText;
@@ -549,7 +542,7 @@
     qs('#beta-discount').textContent = '-' + Math.round(BETA_DISCOUNT*100) + '%';
     if(!BETA_ACTIVE){ qsa('#b-beta-vid,#b-beta-avatar,#beta-banner').forEach(el=>el && (el.style.display='none')); }
 
-    // PACK SELECTOR influences displayed card prices
+    // Sélecteur de formule -> mises à jour des prix
     const packSelect = qs('#packSelect');
     const modeSelect = qs('#modeSelect');
 
@@ -565,13 +558,13 @@
         if(BETA_ACTIVE && card.dataset.beta==='true') price = price * (1-BETA_DISCOUNT);
         qs('[data-price]', card).textContent = fmtPrice(price);
         card.dataset.currentPrice = String(Math.round(price));
-        card.dataset.selectedPack = pack.charAt(0).toUpperCase()+pack.slice(1);
+        card.dataset.selectedPack = (pack==='essentiel'?'Essentiel':pack==='pro'?'Pro':'Mentorat');
       });
     }
     packSelect.addEventListener('change', recomputePrices);
     recomputePrices();
 
-    // Drawer logic
+    // Tiroir
     const overlay = qs('#overlay');
     const drawer  = qs('#drawer');
     const toast   = qs('#toast');
@@ -580,7 +573,7 @@
       qs('#f-program').value = data.course;
       qs('#f-pack').value    = (data.pack || 'Essentiel');
       qs('#f-prix').value    = fmtPrice(+data.price);
-      qs('#f-plan').value    = (modeSelect.value.includes('2 tranches')? '2 tranches' : 'Comptant');
+      qs('#f-plan').value    = (modeSelect.value.includes('2')? '2 échéances' : 'Paiement comptant');
       drawer.classList.add('open'); overlay.classList.add('show');
       document.body.style.overflow='hidden';
     }
@@ -605,7 +598,7 @@
     qs('#drawerCancel').onclick = closeDrawer;
     overlay.addEventListener('click', closeDrawer);
 
-    // Update price if pack is changed inside drawer
+    // Mise à jour du prix à l’intérieur du tiroir
     qs('#f-pack').addEventListener('change', ()=>{
       const course = qs('#f-program').value;
       const card = qsa('.program-card').find(c=>c.dataset.course===course);
@@ -616,7 +609,7 @@
       const upMentor = +(card.dataset.mentoratUp||0);
       let price = base;
       if(chosen==='pro') price += upPro;
-      if(chosen==='mentorat') price += upMentor;
+      if(chosen.includes('mentor')) price += upMentor;
       if(BETA_ACTIVE && card.dataset.beta==='true') price = price * (1-BETA_DISCOUNT);
       qs('#f-prix').value = fmtPrice(price);
     });
@@ -624,7 +617,7 @@
     // WhatsApp helpers
     function openWhatsApp(prefilled){
       if(!WHATSAPP_NUMBER || !/^\d{9,15}$/.test(WHATSAPP_NUMBER)){
-        alert('Veuillez configurer votre numéro WhatsApp pro (WHATSAPP_NUMBER).');
+        alert('Merci de configurer votre numéro WhatsApp (WHATSAPP_NUMBER).');
         return false;
       }
       const url1 = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(prefilled)}`;
@@ -638,62 +631,62 @@
     }
 
     function waGreeting(program){
-      return `Bonjour 👋 Je souhaite réserver ma place pour « ${program} » (cohorte du ${cohortText}). Pouvez‑vous me confirmer les disponibilités et les modalités ?`;
+      return `Bonjour 👋 Je souhaite réserver une place pour « ${program} » (cohorte ${cohortText}). Pouvez-vous confirmer la disponibilité et les détails ?`;
     }
 
-    // CTA actions
+    // CTAs
     qs('#cta-call').addEventListener('click', ()=>{
-      const msg = `Bonjour 👋 Je souhaite un appel découverte de 10 minutes pour choisir la bonne formation (cohorte du ${cohortText}).`;
+      const msg = `Bonjour 👋 Je souhaite un appel découverte de 10 minutes pour choisir le bon programme (cohorte ${cohortText}).`;
       openWhatsApp(msg);
     });
 
-    qs('#cta-atelier').addEventListener('click', ()=>{
+    qs('#cta-workshop').addEventListener('click', ()=>{
       const msg = `Bonjour 👋 Je m’inscris à l’atelier gratuit « Créer 3 Reels avec l’IA » avant la cohorte du ${cohortText}.`;
       openWhatsApp(msg);
     });
 
-    qs('#cta-atelier-cal').addEventListener('click', ()=>{
-      const msg = `Bonjour 👋 Merci de m’envoyer la date et un rappel pour l’atelier gratuit. Mon nom : …`;
+    qs('#cta-workshop-cal').addEventListener('click', ()=>{
+      const msg = `Bonjour 👋 Merci de m’envoyer la date et un rappel pour l’atelier gratuit. Mon nom : …`;
       openWhatsApp(msg);
     });
 
     qs('#cta-whatsapp-contact').addEventListener('click', ()=>{
-      openWhatsApp('Bonjour 👋 J’ai une question au sujet des formations IA.');
+      openWhatsApp('Bonjour 👋 J’ai une question sur les formations IA.');
     });
 
-    qs('#cta-whatsapp-temoignage')?.addEventListener('click', ()=>{
-      openWhatsApp('Bonjour 👋 Pouvez‑vous partager des exemples de projets / témoignages avant la prochaine cohorte ?');
+    qs('#cta-whatsapp-results')?.addEventListener('click', ()=>{
+      openWhatsApp('Bonjour 👋 Pourriez-vous partager des exemples de projets/témoignages avant la prochaine cohorte ?');
     });
 
-    // Send order over WhatsApp
+    // Envoi de la réservation
     qs('#sendWA').addEventListener('click', ()=>{
       const v = (id)=>qs(id).value.trim();
       if(!v('#f-nom') || !v('#f-whatsapp')){
-        alert('Nom et numéro WhatsApp de l\'apprenant sont requis.');
+        alert('Le nom complet et le numéro WhatsApp de l’apprenant sont requis.');
         return;
       }
       const message = `Nouvelle réservation – ${v('#f-program')}\n`+
-        `Pack: ${qs('#f-pack').value}\n`+
-        `Montant: ${v('#f-prix')}\n`+
-        `Plan: ${qs('#f-plan').value}\n`+
-        `Cohorte: ${v('#f-cohorte')}\n`+
-        `Nom: ${v('#f-nom')}\n`+
-        `WhatsApp apprenant: ${v('#f-whatsapp')}\n`+
-        `Ville: ${v('#f-ville') || '-'}\n`+
-        `Paiement: ${qs('#f-mode').value}\n`+
-        `Notes: ${v('#f-notes') || '-'}\n`+
-        `Source: Site web`;
+        `Formule : ${qs('#f-pack').value}\n`+
+        `Montant : ${v('#f-prix')}\n`+
+        `Plan : ${qs('#f-plan').value}\n`+
+        `Cohorte : ${v('#f-cohorte')}\n`+
+        `Nom : ${v('#f-nom')}\n`+
+        `WhatsApp apprenant : ${v('#f-whatsapp')}\n`+
+        `Ville : ${v('#f-ville') || '-'}\n`+
+        `Paiement : ${qs('#f-mode').value}\n`+
+        `Notes : ${v('#f-notes') || '-'}\n`+
+        `Source : Site web`;
       openWhatsApp(message) && closeDrawer();
     });
 
-    // PDF CTA also ouvre WA (lead + download)
-    qs('#cta-pdf').addEventListener('click', (e)=>{
-      const msg = `Bonjour 👋 Je télécharge le Programme PDF + cours d’essai. Merci de m\'ajouter au groupe d\'infos cohorte du ${cohortText}.`;
+    // PDF -> ouvre aussi WA (lead + téléchargement)
+    qs('#cta-pdf').addEventListener('click', ()=>{
+      const msg = `Bonjour 👋 Je télécharge le PDF du programme + cours d’essai. Merci de m’ajouter au groupe d’info pour la cohorte du ${cohortText}.`;
       openWhatsApp(msg);
-      // Laisse le téléchargement se faire (href déjà défini)
+      // le téléchargement suit via href
     });
 
-    // Bind Réserver buttons to WA greeting if on mobile (alternative quick action)
+    // Double-clic sur la carte = message WA rapide
     qsa('.program-card').forEach(card=>{
       card.addEventListener('dblclick', ()=> openWhatsApp(waGreeting(card.dataset.course)) );
     })
@@ -705,10 +698,10 @@
   </script>
   <script defer src="/_vercel/insights/script.js"></script>
 
-  <!-- Pixels (exemples, laissez commentés jusqu’à configuration) -->
+  <!-- Pixels (à activer plus tard) -->
   <!--
   <script>
-    // Meta Pixel / TikTok Pixel à insérer ici quand vos comptes sont prêts.
+    // Meta Pixel / TikTok Pixel
   </script>
   -->
 </body>
