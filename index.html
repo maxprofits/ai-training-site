@@ -3,6 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Auto-detect safe language switch -->
+  <script src="/assets/lang.js"></script>
+
   <title>AI Training Cameroon – Courses (EN)</title>
   <!-- Favicon & theme color -->
   <meta name="theme-color" content="#0b1324" />
@@ -63,7 +66,14 @@
     .thumb.learn{background:radial-gradient(120% 100% at 20% 20%, rgba(250,204,21,.35), transparent 60%), radial-gradient(120% 100% at 80% 80%, rgba(59,130,246,.25), transparent 60%), #0f1a32}
     .thumb.ml{background:radial-gradient(120% 100% at 15% 25%, rgba(34,197,94,.35), transparent 60%), radial-gradient(120% 100% at 85% 75%, rgba(59,130,246,.28), transparent 60%), #0f1a32}
     .thumb.adv{background:radial-gradient(120% 100% at 20% 20%, rgba(244,63,94,.32), transparent 60%), radial-gradient(120% 100% at 85% 80%, rgba(99,102,241,.28), transparent 60%), #0f1a32}
-    .thumb svg{width:70%;max-width:260px;opacity:.95;filter:drop-shadow(0 10px 24px rgba(0,0,0,.35))}
+    /* FIX: force SVG to fill its thumb */
+    .thumb svg{
+      width:100%;
+      height:100%;
+      display:block;
+      opacity:.95;
+      filter:drop-shadow(0 10px 24px rgba(0,0,0,.35));
+    }
 
     /* Hero copy panel */
     .hero-copy{position:relative;isolation:isolate;padding:24px 22px 18px;border-radius:20px;border:1px solid rgba(255,255,255,.06);background:
@@ -127,7 +137,6 @@
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#payment">Payment</a></li>
           <li><a href="#contact">Contact</a></li>
-          <!-- FIX: switch vers la version FR -->
           <li><a class="btn btn-outline" href="/fr/" lang="fr" hreflang="fr">FR</a></li>
         </ul>
       </nav>
@@ -168,17 +177,6 @@
     </div>
   </section>
 
-  <section id="why">
-    <div class="container">
-      <h2>Why choose us?</h2>
-      <div class="grid-3">
-        <div class="card"><h3>Results-oriented</h3><p class="muted">Practical projects (Reels/UGC, avatars, ML dashboards) you can monetize right away.</p></div>
-        <div class="card"><h3>Flexibility</h3><p class="muted">In-person / 100% online, flexible schedules, replays available.</p></div>
-        <div class="card"><h3>Local guidance</h3><p class="muted">Cameroon-based instructors, supportive community, job-ready portfolio.</p></div>
-      </div>
-    </div>
-  </section>
-
   <section id="programs">
     <div class="container">
       <h2>Training Programs</h2>
@@ -207,17 +205,18 @@
           </footer>
         </article>
 
-        <!-- AVATAR -->
+        <!-- AVATAR (FIXED THUMB) -->
         <article class="card program-card" data-course="AI Characters (Avatars/VTuber)" data-base="80000" data-pro-up="30000" data-mentorat-up="70000" data-beta="true">
           <div class="thumb avatar">
-            <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-              <circle cx="100" cy="62" r="26" fill="rgba(59,130,246,0.5)"/>
-              <circle cx="92" cy="60" r="3" fill="#0b1324"/>
-              <circle cx="108" cy="60" r="3" fill="#0b1324"/>
-              <path d="M88 72 Q100 80 112 72" stroke="#0b1324" stroke-width="3" fill="none" stroke-linecap="round"/>
-              <rect x="60" y="92" width="80" height="28" rx="14" fill="rgba(34,211,238,0.35)"/>
-              <circle cx="82" cy="106" r="6" fill="#0b1324"/>
-              <rect x="94" y="102" width="34" height="8" rx="4" fill="#0b1324"/>
+            <svg viewBox="0 0 200 140" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+              <rect x="20" y="18" width="160" height="104" rx="14" fill="#0b1324" stroke="rgba(255,255,255,0.15)"/>
+              <circle cx="100" cy="70" r="26" fill="rgba(59,130,246,0.55)"/>
+              <circle cx="92" cy="68" r="3" fill="#0b1324"/>
+              <circle cx="108" cy="68" r="3" fill="#0b1324"/>
+              <path d="M88 80 Q100 88 112 80" stroke="#0b1324" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <rect x="60" y="98" width="80" height="20" rx="10" fill="rgba(34,211,238,0.35)"/>
+              <circle cx="82" cy="108" r="5" fill="#0b1324"/>
+              <rect x="94" y="104" width="34" height="8" rx="4" fill="#0b1324"/>
             </svg>
           </div>
           <h3>AI Characters (Avatars/VTuber)</h3>
@@ -423,7 +422,7 @@
     <div class="container">
       <h2>FAQ</h2>
       <details><summary>Can I pay in two instalments?</summary><p class="muted">Yes, 50% at enrollment and 50% before starting module 2.</p></details>
-    <details><summary>What if I’m not satisfied?</summary><p class="muted">7-day money-back guarantee (Mobile Money fees excluded).</p></details>
+      <details><summary>What if I’m not satisfied?</summary><p class="muted">7-day money-back guarantee (Mobile Money fees excluded).</p></details>
       <details><summary>Do I need a powerful PC?</summary><p class="muted">No for AI video (CapCut/Runway). Recommended for advanced ML (8 GB RAM+).</p></details>
       <details><summary>Certificate & opportunities</summary><p class="muted">Certificate included. We help you build a portfolio and a sellable offer (UGC/VTuber/Junior ML).</p></details>
     </div>
@@ -432,7 +431,6 @@
   <footer class="site">
     <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
       <small>© <span id="year"></span> AI Training Cameroon</small>
-      <!-- FIX: liens cliquables EN/FR -->
       <small><a href="/" lang="en" hreflang="en">EN</a> · <a href="/fr/" lang="fr" hreflang="fr">FR</a></small>
     </div>
   </footer>
@@ -689,10 +687,9 @@
     });
 
     // PDF CTA also opens WA (lead + download)
-    qs('#cta-pdf').addEventListener('click', (e)=>{
+    qs('#cta-pdf').addEventListener('click', ()=>{
       const msg = `Hello 👋 I’m downloading the Program PDF + trial lesson. Please add me to the info group for the ${cohortText} cohort.`;
       openWhatsApp(msg);
-      // Let the file download (href is already set)
     });
 
     // Bind Reserve buttons to WA greeting on double click (quick action)
