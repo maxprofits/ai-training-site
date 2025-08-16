@@ -68,9 +68,12 @@
     .thumb.adv{background:radial-gradient(120% 100% at 20% 20%, rgba(244,63,94,.32), transparent 60%), radial-gradient(120% 100% at 85% 80%, rgba(99,102,241,.28), transparent 60%), #0f1a32}
     /* FIX: forcer le SVG à remplir la vignette */
     .thumb svg{
-      width:100%;
-      height:100%;
+      width:100% !important;
+      height:100% !important;
       display:block;
+      max-width:none !important;
+      max-height:none !important;
+      object-fit:contain;
       opacity:.95;
       filter:drop-shadow(0 10px 24px rgba(0,0,0,.35));
     }
@@ -91,7 +94,7 @@
     .step{background:rgba(255,255,255,.04);border:1px dashed rgba(255,255,255,.12);border-radius:14px;padding:14px}
 
     /* Témoignages */
-    .avatar{width:38px;height:38px;border-radius:999px;background:#1a2543;border:1px solid rgba(255,255,255,.1)}
+    .row-flex .avatar{width:38px;height:38px;border-radius:999px;background:#1a2543;border:1px solid rgba(255,255,255,.1)}
     .row-flex{display:flex;gap:12px;align-items:flex-start}
 
     /* FAQ */
@@ -137,7 +140,6 @@
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#payment">Paiement</a></li>
           <li><a href="#contact">Contact</a></li>
-          <!-- Switch vers EN -->
           <li><a class="btn btn-outline" href="/" lang="en" hreflang="en">EN</a></li>
         </ul>
       </nav>
@@ -220,7 +222,7 @@
         <!-- AVATARS (VIGNETTE CORRIGÉE) -->
         <article class="card program-card" data-course="Personnages IA (Avatars/VTuber)" data-base="80000" data-pro-up="30000" data-mentorat-up="70000" data-beta="true">
           <div class="thumb avatar">
-            <svg viewBox="0 0 200 140" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <svg width="100%" height="100%" viewBox="0 0 200 140" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
               <rect x="20" y="18" width="160" height="104" rx="14" fill="#0b1324" stroke="rgba(255,255,255,0.15)"/>
               <circle cx="100" cy="70" r="26" fill="rgba(59,130,246,0.55)"/>
               <circle cx="92" cy="68" r="3" fill="#0b1324"/>
@@ -429,7 +431,6 @@
     </div>
   </section>
 
-  <!-- FAQ -->
   <section id="faq">
     <div class="container">
       <h2>FAQ</h2>
@@ -525,14 +526,7 @@
   <div class="toast" id="toast">Lien WhatsApp ouvert dans un nouvel onglet.</div>
 
   <script>
-    /* =============================
-      CONFIG RAPIDE
-      - COHORT_ISO_DATE : date de la cohorte (YYYY-MM-DD)
-      - WHATSAPP_NUMBER : numéro business (sans + ni espaces)
-      - PROGRAM_PDF_HREF : PDF FR du programme
-      - BETA_ACTIVE / BETA_DISCOUNT : promo bêta
-    ============================== */
-    const COHORT_ISO_DATE = '2025-09-02';
+    const COHORT_ISO_DATE = '2025-10-02';
     const WHATSAPP_NUMBER = '237695517054';
     const PROGRAM_PDF_HREF = '/docs/AI_Training_Program_FR.pdf';
     const BETA_ACTIVE   = true;
@@ -545,14 +539,12 @@
     const qs = (s, el=document) => el.querySelector(s);
     const qsa = (s, el=document) => [...el.querySelectorAll(s)];
 
-    // Scroll doux
     qsa('[data-scroll]').forEach(btn=>btn.addEventListener('click', e=>{
       const id = btn.getAttribute('data-scroll');
       const el = qs(id);
       if(el){ e.preventDefault(); window.scrollTo({top:el.offsetTop-60, behavior:'smooth'}); }
     }));
 
-    // Textes dynamiques
     const cohortText = fmtDate(COHORT_ISO_DATE);
     qs('#cohort-chip').textContent = cohortText;
     qs('#f-cohorte').value = cohortText;
@@ -561,12 +553,11 @@
     qs('#beta-discount').textContent = '-' + Math.round(BETA_DISCOUNT*100) + '%';
     if(!BETA_ACTIVE){ qsa('#b-beta-vid,#b-beta-avatar,#beta-banner').forEach(el=>el && (el.style.display='none')); }
 
-    // Sélecteur de formule -> prix affichés
     const packSelect = qs('#packSelect');
     const modeSelect = qs('#modeSelect');
 
     function recomputePrices(){
-      const pack = packSelect.value; // essentiel|pro|mentorat
+      const pack = packSelect.value;
       qsa('.program-card').forEach(card=>{
         const base = +card.dataset.base;
         const upPro = +(card.dataset.proUp||0);
@@ -583,7 +574,6 @@
     packSelect.addEventListener('change', recomputePrices);
     recomputePrices();
 
-    // Drawer
     const overlay = qs('#overlay');
     const drawer  = qs('#drawer');
     const toast   = qs('#toast');
@@ -604,11 +594,7 @@
     qsa('.btn-reserver').forEach(btn=>{
       btn.addEventListener('click', ()=>{
         const card = btn.closest('.program-card');
-        const data = {
-          course: card.dataset.course,
-          price:  card.dataset.currentPrice || card.dataset.base,
-          pack:   (card.dataset.selectedPack || 'Essentiel')
-        };
+        const data = { course: card.dataset.course, price:  card.dataset.currentPrice || card.dataset.base, pack:   (card.dataset.selectedPack || 'Essentiel') };
         openDrawer(data);
       })
     });
@@ -617,7 +603,6 @@
     qs('#drawerCancel').onclick = closeDrawer;
     overlay.addEventListener('click', closeDrawer);
 
-    // Mise à jour prix si formule change dans le tiroir
     qs('#f-pack').addEventListener('change', ()=>{
       const course = qs('#f-program').value;
       const card = qsa('.program-card').find(c=>c.dataset.course===course);
@@ -633,7 +618,6 @@
       qs('#f-prix').value = fmtPrice(price);
     });
 
-    // WhatsApp helpers
     function openWhatsApp(prefilled){
       if(!WHATSAPP_NUMBER || !/^\d{9,15}$/.test(WHATSAPP_NUMBER)){
         alert('Veuillez définir WHATSAPP_NUMBER (sans + ni espaces).');
@@ -653,7 +637,6 @@
       return `Bonjour 👋 Je souhaite réserver une place pour « ${program} » (cohorte ${cohortText}). Pouvez-vous confirmer la dispo et les détails ?`;
     }
 
-    // CTA
     qs('#cta-call').addEventListener('click', ()=>{
       const msg = `Bonjour 👋 Je voudrais un appel découverte de 10 min pour choisir le bon programme (cohorte ${cohortText}).`;
       openWhatsApp(msg);
@@ -677,7 +660,6 @@
       openWhatsApp('Bonjour 👋 Pouvez-vous partager des exemples de projets/témoignages avant la prochaine cohorte ?');
     });
 
-    // Envoi de la réservation
     qs('#sendWA').addEventListener('click', ()=>{
       const v = (id)=>qs(id).value.trim();
       if(!v('#f-nom') || !v('#f-whatsapp')){
@@ -698,13 +680,11 @@
       openWhatsApp(message) && closeDrawer();
     });
 
-    // PDF -> ouvre WA aussi (lead + download)
     qs('#cta-pdf').addEventListener('click', ()=>{
       const msg = `Bonjour 👋 Je télécharge le PDF du programme + cours d’essai. Merci de m’ajouter au groupe d’infos pour la cohorte du ${cohortText}.`;
       openWhatsApp(msg);
     });
 
-    // Double-clic carte -> message WA rapide
     qsa('.program-card').forEach(card=>{
       card.addEventListener('dblclick', ()=> openWhatsApp(waGreeting(card.dataset.course)) );
     })
