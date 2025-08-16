@@ -3,9 +3,6 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- AUTO-DETECT LANG -->
-  <script src="/assets/lang.js"></script>
-
   <title>AI Training Cameroon – Courses (EN)</title>
   <!-- Favicon & theme color -->
   <meta name="theme-color" content="#0b1324" />
@@ -130,6 +127,7 @@
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#payment">Payment</a></li>
           <li><a href="#contact">Contact</a></li>
+          <!-- FIX: switch vers la version FR -->
           <li><a class="btn btn-outline" href="/fr/" lang="fr" hreflang="fr">FR</a></li>
         </ul>
       </nav>
@@ -137,126 +135,583 @@
     </div>
   </header>
 
-  <!-- … le reste du BODY EN est identique à ta version précédente (sections, cartes, JS) … -->
-  <!-- IMPORTANT: garde tous les <svg> à l’intérieur des .thumb (c’est ce qui garantit l’affichage des vignettes) -->
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="container wrap">
+      <div class="hero-copy">
+        <h1><span id="hero-title">Go from zero to monetizing with AI in 30–60 days</span></h1>
+        <p class="lead">Results-focused AI training in Cameroon: <strong>AI video</strong>, <strong>avatars/VTuber</strong>, <strong>foundations & ML</strong>. Evening/weekend classes + replays. Cohorts, hands-on projects & local support.</p>
+        <div class="cta">
+          <button class="btn btn-primary" data-scroll="#programs" id="cta-main">Reserve – Cohort <span id="cohort-chip"></span></button>
+          <a class="btn btn-outline" id="cta-pdf" href="#" download>Program PDF + trial lesson</a>
+          <button class="btn btn-outline" id="cta-call">10-min discovery call</button>
+        </div>
+        <div class="banner"><strong>Beta promo – <span id="beta-discount">-40%</span></strong> on 12 seats · 7-day money-back guarantee</div>
+        <div class="statbar">
+          <span class="pill">Evening & weekend classes</span>
+          <span class="pill">Split payment available</span>
+          <span class="pill">Social media monetization</span>
+          <span class="pill">Certificate included</span>
+        </div>
+      </div>
+      <div>
+        <div class="card" style="min-height:260px;display:grid;place-items:center;text-align:center">
+          <h3 style="margin:0 0 6px">Mentoring & Support</h3>
+          <p class="muted">In-person and live online. Projects adapted to the local market. WhatsApp group + replays.</p>
+          <div class="steps">
+            <div class="step"><b>1.</b> Pick a program</div>
+            <div class="step"><b>2.</b> Reserve your seat</div>
+            <div class="step"><b>3.</b> Start on the cohort date</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="container">
+      <h2>Why choose us?</h2>
+      <div class="grid-3">
+        <div class="card"><h3>Results-oriented</h3><p class="muted">Practical projects (Reels/UGC, avatars, ML dashboards) you can monetize right away.</p></div>
+        <div class="card"><h3>Flexibility</h3><p class="muted">In-person / 100% online, flexible schedules, replays available.</p></div>
+        <div class="card"><h3>Local guidance</h3><p class="muted">Cameroon-based instructors, supportive community, job-ready portfolio.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="programs">
+    <div class="container">
+      <h2>Training Programs</h2>
+      <p class="muted">Each program comes in 3 bundles: <b>Essential</b> (course + replays), <b>Pro</b> (+ group coaching & templates), <b>Mentorship</b> (+ 1-1 & help landing your first client). <span class="badge">7-day guarantee</span></p>
+      <div class="grid-3">
+        <!-- AI VIDEO -->
+        <article class="card program-card" data-course="AI Video Creation (UGC & Reels)" data-base="40000" data-pro-up="20000" data-mentorat-up="60000" data-beta="true">
+          <div class="thumb video">
+            <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+              <rect x="20" y="24" width="120" height="80" rx="12" fill="#0b1324" stroke="rgba(255,255,255,0.15)"/>
+              <polygon points="78,54 108,74 78,94" fill="#22d3ee"/>
+              <rect x="148" y="44" width="30" height="40" rx="6" fill="rgba(59,130,246,0.85)"/>
+              <circle cx="34" cy="112" r="6" fill="rgba(255,255,255,0.25)"/>
+              <circle cx="50" cy="112" r="4" fill="rgba(255,255,255,0.18)"/>
+            </svg>
+          </div>
+          <h3>AI Video Creation (UGC & Reels)</h3>
+          <p class="muted">1 month · CapCut AI, Runway/Motion, prompts, TikTok/Reels/Shorts workflows, template pack.</p>
+          <div class="stack">
+            <div><span class="badge" style="background:rgba(59,130,246,.18); color:#d9e8ff; border-color:rgba(59,130,246,.35)">Monetization</span> <span class="badge" id="b-beta-vid">Beta – -40%</span></div>
+            <div class="muted">Final project: 10 edited Reels + 1 sellable UGC offer.</div>
+          </div>
+          <footer>
+            <span class="price" data-price>40 000 FCFA</span>
+            <button class="btn btn-primary btn-reserver">Reserve</button>
+          </footer>
+        </article>
+
+        <!-- AVATAR -->
+        <article class="card program-card" data-course="AI Characters (Avatars/VTuber)" data-base="80000" data-pro-up="30000" data-mentorat-up="70000" data-beta="true">
+          <div class="thumb avatar">
+            <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+              <circle cx="100" cy="62" r="26" fill="rgba(59,130,246,0.5)"/>
+              <circle cx="92" cy="60" r="3" fill="#0b1324"/>
+              <circle cx="108" cy="60" r="3" fill="#0b1324"/>
+              <path d="M88 72 Q100 80 112 72" stroke="#0b1324" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <rect x="60" y="92" width="80" height="28" rx="14" fill="rgba(34,211,238,0.35)"/>
+              <circle cx="82" cy="106" r="6" fill="#0b1324"/>
+              <rect x="94" y="102" width="34" height="8" rx="4" fill="#0b1324"/>
+            </svg>
+          </div>
+          <h3>AI Characters (Avatars/VTuber)</h3>
+          <p class="muted">2 months · AI avatars, voice/cloning, lip-sync, OBS/live, scripts & sales funnels.</p>
+          <div class="stack">
+            <div><span class="badge" style="background:rgba(16,185,129,.18); color:#caffe8f; border-color:rgba(16,185,129,.35)">Monetization</span> <span class="badge" id="b-beta-avatar">Beta – -40%</span></div>
+            <div class="muted">Final project: ready-to-run VTuber channel + 3 sales scripts.</div>
+          </div>
+          <footer>
+            <span class="price" data-price>80 000 FCFA</span>
+            <button class="btn btn-primary btn-reserver">Reserve</button>
+          </footer>
+        </article>
+
+        <!-- FOUNDATIONS -->
+        <article class="card program-card" data-course="AI Foundations" data-base="30000" data-pro-up="15000" data-mentorat-up="50000">
+          <div class="thumb learn">
+            <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+              <rect x="30" y="60" width="40" height="40" rx="8" fill="rgba(250,204,21,0.85)"/>
+              <rect x="80" y="48" width="40" height="52" rx="8" fill="rgba(59,130,246,0.85)"/>
+              <rect x="130" y="36" width="40" height="64" rx="8" fill="rgba(34,211,238,0.85)"/>
+            </svg>
+          </div>
+          <h3>AI Foundations</h3>
+          <p class="muted">1 month · Core concepts, AI logic, first ML models.</p>
+          <div class="stack">
+            <div><span class="badge">Beginner</span></div>
+            <div class="muted">Final project: graded mini ML project + certificate.</div>
+          </div>
+          <footer>
+            <span class="price" data-price>30 000 FCFA</span>
+            <button class="btn btn-primary btn-reserver">Reserve</button>
+          </footer>
+        </article>
+
+        <!-- ML & DS -->
+        <article class="card program-card" data-course="Machine Learning & Data Science" data-base="60000" data-pro-up="30000" data-mentorat-up="80000">
+          <div class="thumb ml">
+            <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+              <rect x="36" y="76" width="20" height="28" rx="4" fill="rgba(34,197,94,0.85)"/>
+              <rect x="66" y="60" width="20" height="44" rx="4" fill="rgba(59,130,246,0.85)"/>
+              <rect x="96" y="48" width="20" height="56" rx="4" fill="rgba(22,163,74,0.85)"/>
+              <rect x="126" y="66" width="20" height="38" rx="4" fill="rgba(56,189,248,0.85)"/>
+              <path d="M32 100 C60 80, 90 70, 160 60" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Machine Learning & Data Science</h3>
+          <p class="muted">3 months · Regression, classification, evaluation, data wrangling.</p>
+          <div class="stack">
+            <div><span class="badge" style="background:rgba(59,130,246,.15);color:#cfe4ff;border-color:rgba(59,130,246,.35)">Intermediate</span></div>
+            <div class="muted">Final project: ML dashboard + report.</div>
+          </div>
+          <footer>
+            <span class="price" data-price>60 000 FCFA</span>
+            <button class="btn btn-primary btn-reserver">Reserve</button>
+          </footer>
+        </article>
+
+        <!-- ADVANCED -->
+        <article class="card program-card" data-course="Advanced AI & Data Science" data-base="100000" data-pro-up="40000" data-mentorat-up="100000">
+          <div class="thumb adv">
+            <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+              <circle cx="60" cy="70" r="9" fill="rgba(244,63,94,0.9)"/>
+              <circle cx="100" cy="46" r="9" fill="rgba(99,102,241,0.9)"/>
+              <circle cx="140" cy="70" r="9" fill="rgba(34,211,238,0.9)"/>
+              <circle cx="100" cy="100" r="9" fill="rgba(16,185,129,0.9)"/>
+              <path d="M60 70 L100 46 L140 70 L100 100 Z" stroke="rgba(255,255,255,0.55)" stroke-width="3" fill="none"/>
+              <path d="M60 70 L100 100 L140 70" stroke="rgba(255,255,255,0.35)" stroke-width="2" fill="none"/>
+            </svg>
+          </div>
+          <h3>Advanced AI & Data Science</h3>
+          <p class="muted">6 months · Deep Learning, NLP, capstone projects.</p>
+          <div class="stack">
+            <div><span class="badge" style="background:rgba(16,185,129,.18);color:#caffe8f;border-color:rgba(16,185,129,.35)">Advanced</span></div>
+            <div class="muted">Final project: full dossier + presentation.</div>
+          </div>
+          <footer>
+            <span class="price" data-price>100 000 FCFA</span>
+            <button class="btn btn-primary btn-reserver">Reserve</button>
+          </footer>
+        </article>
+      </div>
+
+      <!-- Bundle selector -->
+      <div class="card" style="margin-top:18px">
+        <h3 style="margin:0 0 6px">Choose your bundle</h3>
+        <p class="muted" style="margin-top:0">Price updates by bundle. Beta discount applies to all bundles marked “Beta”.</p>
+        <div class="row">
+          <div class="field">
+            <label>Bundle</label>
+            <select id="packSelect">
+              <option value="essentiel">Essential (course + replays)</option>
+              <option value="pro">Pro (+ group coaching & templates)</option>
+              <option value="mentorat">Mentorship (+ 1-1 & first-client help)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Payment plan</label>
+            <select id="modeSelect">
+              <option>Full payment</option>
+              <option>2 instalments (50% + 50%)</option>
+            </select>
+          </div>
+        </div>
+        <small class="muted">Tip: click “Reserve” on the card of your chosen program.</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- Free workshop -->
+  <section id="workshop">
+    <div class="container">
+      <h2>Free workshop (45 min) – <span id="workshop-title">Create 3 Reels with AI in 60 minutes</span></h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>What you’ll do</h3>
+          <ul class="stack" style="margin:0;padding-left:18px">
+            <li>Generate 3 scripts + prompts and produce 3 Reels.</li>
+            <li>Set up a mini CapCut/Runway workflow.</li>
+            <li>2-minute pitch: sell a local UGC offer.</li>
+          </ul>
+          <div class="cta" style="margin-top:12px">
+            <button class="btn btn-primary" id="cta-workshop">Register for the workshop</button>
+            <button class="btn btn-outline" id="cta-workshop-cal">Send me the date & reminder</button>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Who is it for?</h3>
+          <p class="muted">Students, community managers, solo e-commerce owners, content creators.</p>
+          <h3 style="margin-top:12px">Bonus</h3>
+          <p class="muted">Script templates and monetization checklists included.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results / Case studies (placeholders) -->
+  <section id="results">
+    <div class="container">
+      <h2>Results & testimonials</h2>
+      <div class="grid-3">
+        <div class="card">
+          <div class="row-flex">
+            <div class="avatar"></div>
+            <div>
+              <h3 style="margin:0 0 6px">“+15 videos / month”</h3>
+              <p class="muted">Shops in Douala (CM) & Libreville (GA): weekly Reels → +28% to +45% views in 3–5 weeks.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="row-flex">
+            <div class="avatar"></div>
+            <div>
+              <h3 style="margin:0 0 6px">“First client in 2 weeks”</h3>
+              <p class="muted">UGC creators in Cameroon & the sub-region: simple offer + demo → first contract in 2–3 weeks.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="row-flex">
+            <div class="avatar"></div>
+            <div>
+              <h3 style="margin:0 0 6px">“Job-ready portfolio”</h3>
+              <p class="muted">Students (CM, GA, CG): mini ML projects + report → internships/apprenticeships secured.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:10px">Want to join the next cohort? <button class="btn btn-outline" id="cta-whatsapp-results">Chat on WhatsApp</button></p>
+    </div>
+  </section>
+
+  <!-- Payment & enrollment -->
+  <section id="payment">
+    <div class="container">
+      <h2>Payment & Enrollment</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Options</h3>
+          <ul class="stack" style="margin:0;padding-left:18px">
+            <li>Full payment (recommended) – cash on site or Mobile Money deposit</li>
+            <li>Mobile Money: Orange Money / MTN (deposit)</li>
+            <li>2-instalment plan available (50% + 50%)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>How it works</h3>
+          <p class="muted">Click <b>Reserve</b> on your program, choose the bundle and fill the form: your reservation goes straight to our WhatsApp.</p>
+          <div class="banner" style="margin-top:12px"><b>Guarantee</b>: 7-day money-back if you’re not satisfied.</div>
+        </div>
+        <div class="card">
+          <h3>Contact</h3>
+          <p id="contact" class="muted">WhatsApp: <b>+237 695 517 054</b><br/>Bafoussam · Cameroon</p>
+          <div class="cta"><button class="btn btn-whatsapp" id="cta-whatsapp-contact">Write on WhatsApp</button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <h2>FAQ</h2>
+      <details><summary>Can I pay in two instalments?</summary><p class="muted">Yes, 50% at enrollment and 50% before starting module 2.</p></details>
+    <details><summary>What if I’m not satisfied?</summary><p class="muted">7-day money-back guarantee (Mobile Money fees excluded).</p></details>
+      <details><summary>Do I need a powerful PC?</summary><p class="muted">No for AI video (CapCut/Runway). Recommended for advanced ML (8 GB RAM+).</p></details>
+      <details><summary>Certificate & opportunities</summary><p class="muted">Certificate included. We help you build a portfolio and a sellable offer (UGC/VTuber/Junior ML).</p></details>
+    </div>
+  </section>
+
+  <footer class="site">
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+      <small>© <span id="year"></span> AI Training Cameroon</small>
+      <!-- FIX: liens cliquables EN/FR -->
+      <small><a href="/" lang="en" hreflang="en">EN</a> · <a href="/fr/" lang="fr" hreflang="fr">FR</a></small>
+    </div>
+  </footer>
 
   <!-- Overlay + Reservation drawer -->
   <div class="overlay" id="overlay"></div>
-  <aside class="drawer" id="drawer">…</aside>
+  <aside class="drawer" id="drawer">
+    <header>
+      <strong>Complete your enrollment</strong>
+      <button class="close" id="drawerClose">✕</button>
+    </header>
+    <main>
+      <form id="orderForm">
+        <div class="field">
+          <label>Program</label>
+          <input class="input" id="f-program" name="programme" readonly>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label>Bundle</label>
+            <select id="f-pack" name="pack">
+              <option value="Essential">Essential</option>
+              <option value="Pro">Pro</option>
+              <option value="Mentorship">Mentorship</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Amount</label>
+            <input class="input" id="f-prix" name="prix" readonly>
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label>Plan</label>
+            <select id="f-plan" name="plan">
+              <option value="Full payment">Full payment (recommended)</option>
+              <option value="2 instalments">2 instalments (50% + 50%)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Cohort date</label>
+            <input class="input" id="f-cohorte" name="cohorte" readonly>
+          </div>
+        </div>
+        <div class="field">
+          <label>Full name</label>
+          <input required class="input" id="f-nom" name="nom" placeholder="e.g. Paul N.">
+        </div>
+        <div class="row">
+          <div class="field">
+            <label>Learner’s WhatsApp number</label>
+            <input required class="input" id="f-whatsapp" name="whatsapp" placeholder="e.g. +2376…">
+          </div>
+          <div class="field">
+            <label>City</label>
+            <input class="input" id="f-ville" name="ville" placeholder="e.g. Bafoussam">
+          </div>
+        </div>
+        <div class="field">
+          <label>Payment method</label>
+          <select id="f-mode" name="mode">
+            <option>Full payment</option>
+            <option>Orange Money</option>
+            <option>MTN Mobile Money</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Notes</label>
+          <textarea id="f-notes" name="notes" placeholder="Any useful info (schedule, needs…)."></textarea>
+        </div>
+      </form>
+      <div class="banner" style="margin-top:4px"><b>7-day guarantee</b> · <span id="beta-banner">Beta promo active</span> · Limited seats</div>
+    </main>
+    <footer>
+      <button type="button" class="btn btn-whatsapp" id="sendWA">Send to WhatsApp</button>
+      <button class="btn btn-ghost" id="drawerCancel">Cancel</button>
+    </footer>
+  </aside>
 
   <div class="toast" id="toast">WhatsApp link opened in a new tab.</div>
 
   <script>
-    /* QUICK CONFIG (EN) */
+    /* =============================
+      QUICK CONFIG
+      - Change COHORT_ISO_DATE for the cohort start date.
+      - Set WHATSAPP_NUMBER to your business number (no + or spaces).
+      - Set PROGRAM_PDF_HREF to your program PDF.
+      - Toggle BETA_ACTIVE and set BETA_DISCOUNT to enable/disable the beta promo.
+    ============================== */
     const COHORT_ISO_DATE = '2025-09-02';
-    const WHATSAPP_NUMBER = '237695517054';
+    const WHATSAPP_NUMBER = '237695517054'; // international format, no + or spaces
     const PROGRAM_PDF_HREF = '/docs/AI_Training_Program_EN.pdf';
-    const BETA_ACTIVE=true, BETA_DISCOUNT=0.40, BETA_PLACES=12;
+    const BETA_ACTIVE   = true;
+    const BETA_DISCOUNT = 0.40; // 40%
+    const BETA_PLACES   = 12;
 
-    const fmtPrice=(x)=> new Intl.NumberFormat('fr-FR').format(Math.round(x)) + ' FCFA';
-    const fmtDate =(iso)=> new Date(iso+'T12:00:00').toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}).replace('.', '');
+    const fmtPrice = (x)=> new Intl.NumberFormat('fr-FR').format(Math.round(x)) + ' FCFA';
+    const fmtDate  = (iso)=> new Date(iso+'T12:00:00').toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}).replace('.', '');
 
-    const qs=(s,el=document)=>el.querySelector(s);
-    const qsa=(s,el=document)=>[...el.querySelectorAll(s)];
+    const qs = (s, el=document) => el.querySelector(s);
+    const qsa = (s, el=document) => [...el.querySelectorAll(s)];
 
     // Smooth scroll
     qsa('[data-scroll]').forEach(btn=>btn.addEventListener('click', e=>{
-      const id=btn.getAttribute('data-scroll'); const el=qs(id);
-      if(el){ e.preventDefault(); window.scrollTo({top:el.offsetTop-60,behavior:'smooth'}); }
+      const id = btn.getAttribute('data-scroll');
+      const el = qs(id);
+      if(el){ e.preventDefault(); window.scrollTo({top:el.offsetTop-60, behavior:'smooth'}); }
     }));
 
-    // Init texts
-    const cohortText=fmtDate(COHORT_ISO_DATE);
-    qs('#cohort-chip').textContent=cohortText;
-    qs('#f-cohorte').value=cohortText;
-    qs('#year').textContent=new Date().getFullYear();
-    qs('#cta-pdf').href=PROGRAM_PDF_HREF;
-    qs('#beta-discount').textContent='-'+Math.round(BETA_DISCOUNT*100)+'%';
-    if(!BETA_ACTIVE){ qsa('#b-beta-vid,#b-beta-avatar,#beta-banner').forEach(el=>el&&(el.style.display='none')); }
+    // Init dynamic texts
+    const cohortText = fmtDate(COHORT_ISO_DATE);
+    qs('#cohort-chip').textContent = cohortText;
+    qs('#f-cohorte').value = cohortText;
+    qs('#year').textContent = new Date().getFullYear();
+    qs('#cta-pdf').href = PROGRAM_PDF_HREF;
+    qs('#beta-discount').textContent = '-' + Math.round(BETA_DISCOUNT*100) + '%';
+    if(!BETA_ACTIVE){ qsa('#b-beta-vid,#b-beta-avatar,#beta-banner').forEach(el=>el && (el.style.display='none')); }
 
-    // Bundle → prices
-    const packSelect=qs('#packSelect'); const modeSelect=qs('#modeSelect');
+    // Bundle selector influences displayed card prices
+    const packSelect = qs('#packSelect');
+    const modeSelect = qs('#modeSelect');
+
     function recomputePrices(){
-      const pack=packSelect.value;
+      const pack = packSelect.value; // essentiel|pro|mentorat (ids kept for simplicity)
       qsa('.program-card').forEach(card=>{
-        const base=+card.dataset.base, upPro=+(card.dataset.proUp||0), upMentor=+(card.dataset.mentoratUp||0);
-        let price=base;
-        if(pack==='pro') price+=upPro;
-        if(pack==='mentorat') price+=upMentor;
-        if(BETA_ACTIVE && card.dataset.beta==='true') price=price*(1-BETA_DISCOUNT);
-        qs('[data-price]',card).textContent=fmtPrice(price);
-        card.dataset.currentPrice=String(Math.round(price));
-        card.dataset.selectedPack=(pack==='essentiel'?'Essential':pack==='pro'?'Pro':'Mentorship');
+        const base = +card.dataset.base;
+        const upPro = +(card.dataset.proUp||0);
+        const upMentor = +(card.dataset.mentoratUp||0);
+        let price = base;
+        if(pack==='pro') price += upPro;
+        if(pack==='mentorat') price += upMentor;
+        if(BETA_ACTIVE && card.dataset.beta==='true') price = price * (1-BETA_DISCOUNT);
+        qs('[data-price]', card).textContent = fmtPrice(price);
+        card.dataset.currentPrice = String(Math.round(price));
+        card.dataset.selectedPack = (pack==='essentiel'?'Essential':pack==='pro'?'Pro':'Mentorship');
       });
     }
-    packSelect.addEventListener('change',recomputePrices); recomputePrices();
+    packSelect.addEventListener('change', recomputePrices);
+    recomputePrices();
 
-    // Drawer
-    const overlay=qs('#overlay'), drawer=qs('#drawer'), toast=qs('#toast');
+    // Drawer logic
+    const overlay = qs('#overlay');
+    const drawer  = qs('#drawer');
+    const toast   = qs('#toast');
+
     function openDrawer(data){
-      qs('#f-program').value=data.course;
-      qs('#f-pack').value=(data.pack||'Essential');
-      qs('#f-prix').value=fmtPrice(+data.price);
-      qs('#f-plan').value=(modeSelect.value.includes('2')?'2 instalments':'Full payment');
-      drawer.classList.add('open'); overlay.classList.add('show'); document.body.style.overflow='hidden';
+      qs('#f-program').value = data.course;
+      qs('#f-pack').value    = (data.pack || 'Essential');
+      qs('#f-prix').value    = fmtPrice(+data.price);
+      qs('#f-plan').value    = (modeSelect.value.includes('2')? '2 instalments' : 'Full payment');
+      drawer.classList.add('open'); overlay.classList.add('show');
+      document.body.style.overflow='hidden';
     }
-    function closeDrawer(){ drawer.classList.remove('open'); overlay.classList.remove('show'); document.body.style.overflow=''; }
-    qsa('.btn-reserver').forEach(btn=>{
-      btn.addEventListener('click',()=>{
-        const card=btn.closest('.program-card');
-        openDrawer({course:card.dataset.course, price:card.dataset.currentPrice||card.dataset.base, pack:card.dataset.selectedPack||'Essential'});
-      });
-    });
-    qs('#drawerClose').onclick=closeDrawer; qs('#drawerCancel').onclick=closeDrawer; overlay.addEventListener('click',closeDrawer);
+    function closeDrawer(){
+      drawer.classList.remove('open'); overlay.classList.remove('show');
+      document.body.style.overflow='';
+    }
 
-    // Update price inside drawer
-    qs('#f-pack').addEventListener('change',()=>{
-      const course=qs('#f-program').value; const card=qsa('.program-card').find(c=>c.dataset.course===course); if(!card) return;
-      const chosen=qs('#f-pack').value.toLowerCase();
-      const base=+card.dataset.base, upPro=+(card.dataset.proUp||0), upMentor=+(card.dataset.mentoratUp||0);
-      let price=base; if(chosen==='pro') price+=upPro; if(chosen.includes('mentor')) price+=upMentor;
-      if(BETA_ACTIVE && card.dataset.beta==='true') price=price*(1-BETA_DISCOUNT);
-      qs('#f-prix').value=fmtPrice(price);
+    qsa('.btn-reserver').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const card = btn.closest('.program-card');
+        const data = {
+          course: card.dataset.course,
+          price:  card.dataset.currentPrice || card.dataset.base,
+          pack:   (card.dataset.selectedPack || 'Essential')
+        };
+        openDrawer(data);
+      })
+    });
+
+    qs('#drawerClose').onclick = closeDrawer;
+    qs('#drawerCancel').onclick = closeDrawer;
+    overlay.addEventListener('click', closeDrawer);
+
+    // Update price if bundle changes inside drawer
+    qs('#f-pack').addEventListener('change', ()=>{
+      const course = qs('#f-program').value;
+      const card = qsa('.program-card').find(c=>c.dataset.course===course);
+      if(!card) return;
+      const chosen = qs('#f-pack').value.toLowerCase();
+      const base = +card.dataset.base;
+      const upPro = +(card.dataset.proUp||0);
+      const upMentor = +(card.dataset.mentoratUp||0);
+      let price = base;
+      if(chosen==='pro') price += upPro;
+      if(chosen.includes('mentor')) price += upMentor;
+      if(BETA_ACTIVE && card.dataset.beta==='true') price = price * (1-BETA_DISCOUNT);
+      qs('#f-prix').value = fmtPrice(price);
     });
 
     // WhatsApp helpers
     function openWhatsApp(prefilled){
-      if(!WHATSAPP_NUMBER || !/^\d{9,15}$/.test(WHATSAPP_NUMBER)){ alert('Please set your business WhatsApp number.'); return false; }
-      const url1=`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(prefilled)}`;
-      const url2=`https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(prefilled)}`;
-      let opened=false; try{const w=window.open(url1,'_blank'); opened=!!w;}catch(e){}
-      if(!opened){ try{ window.location.href=url1; opened=true; }catch(e){} }
-      if(!opened){ window.location.href=url2; }
-      toast.classList.add('show'); setTimeout(()=>toast.classList.remove('show'),3200); return true;
+      if(!WHATSAPP_NUMBER || !/^\d{9,15}$/.test(WHATSAPP_NUMBER)){
+        alert('Please set your business WhatsApp number (WHATSAPP_NUMBER).');
+        return false;
+      }
+      const url1 = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(prefilled)}`;
+      const url2 = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(prefilled)}`;
+      let opened = false;
+      try { const w = window.open(url1, '_blank'); opened = !!w; } catch(e) {}
+      if(!opened){ try { window.location.href = url1; opened = true; } catch(e) {} }
+      if(!opened){ window.location.href = url2; }
+      toast.classList.add('show'); setTimeout(()=>toast.classList.remove('show'), 3200);
+      return true;
     }
-    function waGreeting(program){ return `Hello 👋 I’d like to reserve a seat for “${program}” (cohort ${cohortText}). Could you confirm availability and details?`; }
 
-    // CTAs
-    qs('#cta-call').addEventListener('click',()=> openWhatsApp(`Hello 👋 I’d like a 10-minute discovery call (cohort ${cohortText}).`) );
-    qs('#cta-workshop').addEventListener('click',()=> openWhatsApp(`Hello 👋 I’m registering for the free workshop before the ${cohortText} cohort.`) );
-    qs('#cta-workshop-cal').addEventListener('click',()=> openWhatsApp(`Hello 👋 Please send me the date and a reminder for the free workshop. My name: …`) );
-    qs('#cta-whatsapp-contact').addEventListener('click',()=> openWhatsApp('Hello 👋 I have a question about the AI courses.') );
-    qs('#cta-whatsapp-results')?.addEventListener('click',()=> openWhatsApp('Hello 👋 Could you share some project examples/testimonials?') );
+    function waGreeting(program){
+      return `Hello 👋 I’d like to reserve a seat for “${program}” (cohort ${cohortText}). Could you confirm availability and details?`;
+    }
 
-    // Send order
-    qs('#sendWA').addEventListener('click',()=>{
-      const v=(id)=>qs(id).value.trim();
-      if(!v('#f-nom')||!v('#f-whatsapp')){ alert('Full name and the learner’s WhatsApp number are required.'); return; }
-      const message=`New reservation – ${v('#f-program')}\nBundle: ${qs('#f-pack').value}\nAmount: ${v('#f-prix')}\nPlan: ${qs('#f-plan').value}\nCohort: ${v('#f-cohorte')}\nName: ${v('#f-nom')}\nLearner WhatsApp: ${v('#f-whatsapp')}\nCity: ${v('#f-ville')||'-'}\nPayment: ${qs('#f-mode').value}\nNotes: ${v('#f-notes')||'-'}\nSource: Website`;
-      openWhatsApp(message)&&closeDrawer();
+    // CTA actions
+    qs('#cta-call').addEventListener('click', ()=>{
+      const msg = `Hello 👋 I’d like a 10-minute discovery call to choose the right program (cohort ${cohortText}).`;
+      openWhatsApp(msg);
     });
 
-    qs('#cta-pdf').addEventListener('click',()=>{
-      openWhatsApp(`Hello 👋 I’m downloading the Program PDF + trial lesson. Please add me to the info group for the ${cohortText} cohort.`);
+    qs('#cta-workshop').addEventListener('click', ()=>{
+      const msg = `Hello 👋 I’m registering for the free workshop “Create 3 Reels with AI” before the ${cohortText} cohort.`;
+      openWhatsApp(msg);
     });
 
+    qs('#cta-workshop-cal').addEventListener('click', ()=>{
+      const msg = `Hello 👋 Please send me the date and a reminder for the free workshop. My name: …`;
+      openWhatsApp(msg);
+    });
+
+    qs('#cta-whatsapp-contact').addEventListener('click', ()=>{
+      openWhatsApp('Hello 👋 I have a question about the AI courses.');
+    });
+
+    qs('#cta-whatsapp-results')?.addEventListener('click', ()=>{
+      openWhatsApp('Hello 👋 Could you share some project examples/testimonials before the next cohort?');
+    });
+
+    // Send order over WhatsApp
+    qs('#sendWA').addEventListener('click', ()=>{
+      const v = (id)=>qs(id).value.trim();
+      if(!v('#f-nom') || !v('#f-whatsapp')){
+        alert('Full name and the learner’s WhatsApp number are required.');
+        return;
+      }
+      const message = `New reservation – ${v('#f-program')}\n`+
+        `Bundle: ${qs('#f-pack').value}\n`+
+        `Amount: ${v('#f-prix')}\n`+
+        `Plan: ${qs('#f-plan').value}\n`+
+        `Cohort: ${v('#f-cohorte')}\n`+
+        `Name: ${v('#f-nom')}\n`+
+        `Learner WhatsApp: ${v('#f-whatsapp')}\n`+
+        `City: ${v('#f-ville') || '-'}\n`+
+        `Payment: ${qs('#f-mode').value}\n`+
+        `Notes: ${v('#f-notes') || '-'}\n`+
+        `Source: Website`;
+      openWhatsApp(message) && closeDrawer();
+    });
+
+    // PDF CTA also opens WA (lead + download)
+    qs('#cta-pdf').addEventListener('click', (e)=>{
+      const msg = `Hello 👋 I’m downloading the Program PDF + trial lesson. Please add me to the info group for the ${cohortText} cohort.`;
+      openWhatsApp(msg);
+      // Let the file download (href is already set)
+    });
+
+    // Bind Reserve buttons to WA greeting on double click (quick action)
     qsa('.program-card').forEach(card=>{
-      card.addEventListener('dblclick',()=> openWhatsApp(waGreeting(card.dataset.course)) );
-    });
+      card.addEventListener('dblclick', ()=> openWhatsApp(waGreeting(card.dataset.course)) );
+    })
   </script>
 
   <!-- Vercel Web Analytics -->
-  <script> window.va = window.va || function(){ (window.vaq=window.vaq||[]).push(arguments); }; </script>
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
   <script defer src="/_vercel/insights/script.js"></script>
+
+  <!-- Pixels (examples; keep commented until configured) -->
+  <!--
+  <script>
+    // Meta Pixel / TikTok Pixel goes here once your accounts are ready.
+  </script>
+  -->
 </body>
 </html>
