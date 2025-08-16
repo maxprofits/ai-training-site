@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Auto-detect safe language switch -->
+  <!-- Language remember/redirect (safe) -->
   <script src="/assets/lang.js"></script>
 
   <title>AI Training Cameroon – Courses (EN)</title>
@@ -66,11 +66,14 @@
     .thumb.learn{background:radial-gradient(120% 100% at 20% 20%, rgba(250,204,21,.35), transparent 60%), radial-gradient(120% 100% at 80% 80%, rgba(59,130,246,.25), transparent 60%), #0f1a32}
     .thumb.ml{background:radial-gradient(120% 100% at 15% 25%, rgba(34,197,94,.35), transparent 60%), radial-gradient(120% 100% at 85% 75%, rgba(59,130,246,.28), transparent 60%), #0f1a32}
     .thumb.adv{background:radial-gradient(120% 100% at 20% 20%, rgba(244,63,94,.32), transparent 60%), radial-gradient(120% 100% at 85% 80%, rgba(99,102,241,.28), transparent 60%), #0f1a32}
-    /* FIX: force SVG to fill its thumb */
+    /* Force SVG to fill thumbnail */
     .thumb svg{
       width:100%;
       height:100%;
       display:block;
+      max-width:none;
+      max-height:none;
+      object-fit:contain;
       opacity:.95;
       filter:drop-shadow(0 10px 24px rgba(0,0,0,.35));
     }
@@ -90,8 +93,8 @@
     .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
     .step{background:rgba(255,255,255,.04);border:1px dashed rgba(255,255,255,.12);border-radius:14px;padding:14px}
 
-    /* Testimonials / Cases */
-    .avatar{width:38px;height:38px;border-radius:999px;background:#1a2543;border:1px solid rgba(255,255,255,.1)}
+    /* Testimonials */
+    .row-flex .avatar{width:38px;height:38px;border-radius:999px;background:#1a2543;border:1px solid rgba(255,255,255,.1)}
     .row-flex{display:flex;gap:12px;align-items:flex-start}
 
     /* FAQ */
@@ -177,10 +180,21 @@
     </div>
   </section>
 
+  <section id="why">
+    <div class="container">
+      <h2>Why choose us?</h2>
+      <div class="grid-3">
+        <div class="card"><h3>Results‑oriented</h3><p class="muted">Practical projects (Reels/UGC, avatars, ML dashboards) you can monetize right away.</p></div>
+        <div class="card"><h3>Flexibility</h3><p class="muted">In‑person / 100% online, flexible schedules, replays available.</p></div>
+        <div class="card"><h3>Local guidance</h3><p class="muted">Cameroon‑based instructors, supportive community, job‑ready portfolio.</p></div>
+      </div>
+    </div>
+  </section>
+
   <section id="programs">
     <div class="container">
       <h2>Training Programs</h2>
-      <p class="muted">Each program comes in 3 bundles: <b>Essential</b> (course + replays), <b>Pro</b> (+ group coaching & templates), <b>Mentorship</b> (+ 1-1 & help landing your first client). <span class="badge">7-day guarantee</span></p>
+      <p class="muted">Each program comes in 3 bundles: <b>Essential</b> (course + replays), <b>Pro</b> (+ group coaching & templates), <b>Mentorship</b> (+ 1‑1 & help landing your first client). <span class="badge">7‑day guarantee</span></p>
       <div class="grid-3">
         <!-- AI VIDEO -->
         <article class="card program-card" data-course="AI Video Creation (UGC & Reels)" data-base="40000" data-pro-up="20000" data-mentorat-up="60000" data-beta="true">
@@ -205,10 +219,10 @@
           </footer>
         </article>
 
-        <!-- AVATAR (FIXED THUMB) -->
+        <!-- AVATAR (THUMB FIXED) -->
         <article class="card program-card" data-course="AI Characters (Avatars/VTuber)" data-base="80000" data-pro-up="30000" data-mentorat-up="70000" data-beta="true">
           <div class="thumb avatar">
-            <svg viewBox="0 0 200 140" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <svg width="100%" height="100%" viewBox="0 0 200 140" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
               <rect x="20" y="18" width="160" height="104" rx="14" fill="#0b1324" stroke="rgba(255,255,255,0.15)"/>
               <circle cx="100" cy="70" r="26" fill="rgba(59,130,246,0.55)"/>
               <circle cx="92" cy="68" r="3" fill="#0b1324"/>
@@ -220,10 +234,10 @@
             </svg>
           </div>
           <h3>AI Characters (Avatars/VTuber)</h3>
-          <p class="muted">2 months · AI avatars, voice/cloning, lip-sync, OBS/live, scripts & sales funnels.</p>
+          <p class="muted">2 months · AI avatars, voice/cloning, lip‑sync, OBS/live, scripts & sales funnels.</p>
           <div class="stack">
             <div><span class="badge" style="background:rgba(16,185,129,.18); color:#caffe8f; border-color:rgba(16,185,129,.35)">Monetization</span> <span class="badge" id="b-beta-avatar">Beta – -40%</span></div>
-            <div class="muted">Final project: ready-to-run VTuber channel + 3 sales scripts.</div>
+            <div class="muted">Final project: ready‑to‑run VTuber channel + 3 sales scripts.</div>
           </div>
           <footer>
             <span class="price" data-price>80 000 FCFA</span>
@@ -310,7 +324,7 @@
             <select id="packSelect">
               <option value="essentiel">Essential (course + replays)</option>
               <option value="pro">Pro (+ group coaching & templates)</option>
-              <option value="mentorat">Mentorship (+ 1-1 & first-client help)</option>
+              <option value="mentorat">Mentorship (+ 1‑1 & first‑client help)</option>
             </select>
           </div>
           <div class="field">
@@ -336,7 +350,7 @@
           <ul class="stack" style="margin:0;padding-left:18px">
             <li>Generate 3 scripts + prompts and produce 3 Reels.</li>
             <li>Set up a mini CapCut/Runway workflow.</li>
-            <li>2-minute pitch: sell a local UGC offer.</li>
+            <li>2‑minute pitch: sell a local UGC offer.</li>
           </ul>
           <div class="cta" style="margin-top:12px">
             <button class="btn btn-primary" id="cta-workshop">Register for the workshop</button>
@@ -345,7 +359,7 @@
         </div>
         <div class="card">
           <h3>Who is it for?</h3>
-          <p class="muted">Students, community managers, solo e-commerce owners, content creators.</p>
+          <p class="muted">Students, community managers, solo e‑commerce owners, content creators.</p>
           <h3 style="margin-top:12px">Bonus</h3>
           <p class="muted">Script templates and monetization checklists included.</p>
         </div>
@@ -353,7 +367,7 @@
     </div>
   </section>
 
-  <!-- Results / Case studies (placeholders) -->
+  <!-- Results / Case studies -->
   <section id="results">
     <div class="container">
       <h2>Results & testimonials</h2>
@@ -372,7 +386,7 @@
             <div class="avatar"></div>
             <div>
               <h3 style="margin:0 0 6px">“First client in 2 weeks”</h3>
-              <p class="muted">UGC creators in Cameroon & the sub-region: simple offer + demo → first contract in 2–3 weeks.</p>
+              <p class="muted">UGC creators in Cameroon & the sub‑region: simple offer + demo → first contract in 2–3 weeks.</p>
             </div>
           </div>
         </div>
@@ -380,7 +394,7 @@
           <div class="row-flex">
             <div class="avatar"></div>
             <div>
-              <h3 style="margin:0 0 6px">“Job-ready portfolio”</h3>
+              <h3 style="margin:0 0 6px">“Job‑ready portfolio”</h3>
               <p class="muted">Students (CM, GA, CG): mini ML projects + report → internships/apprenticeships secured.</p>
             </div>
           </div>
@@ -400,13 +414,13 @@
           <ul class="stack" style="margin:0;padding-left:18px">
             <li>Full payment (recommended) – cash on site or Mobile Money deposit</li>
             <li>Mobile Money: Orange Money / MTN (deposit)</li>
-            <li>2-instalment plan available (50% + 50%)</li>
+            <li>2‑instalment plan available (50% + 50%)</li>
           </ul>
         </div>
         <div class="card">
           <h3>How it works</h3>
           <p class="muted">Click <b>Reserve</b> on your program, choose the bundle and fill the form: your reservation goes straight to our WhatsApp.</p>
-          <div class="banner" style="margin-top:12px"><b>Guarantee</b>: 7-day money-back if you’re not satisfied.</div>
+          <div class="banner" style="margin-top:12px"><b>Guarantee</b>: 7‑day money‑back if you’re not satisfied.</div>
         </div>
         <div class="card">
           <h3>Contact</h3>
@@ -422,7 +436,7 @@
     <div class="container">
       <h2>FAQ</h2>
       <details><summary>Can I pay in two instalments?</summary><p class="muted">Yes, 50% at enrollment and 50% before starting module 2.</p></details>
-      <details><summary>What if I’m not satisfied?</summary><p class="muted">7-day money-back guarantee (Mobile Money fees excluded).</p></details>
+      <details><summary>What if I’m not satisfied?</summary><p class="muted">7‑day money‑back guarantee (Mobile Money fees excluded).</p></details>
       <details><summary>Do I need a powerful PC?</summary><p class="muted">No for AI video (CapCut/Runway). Recommended for advanced ML (8 GB RAM+).</p></details>
       <details><summary>Certificate & opportunities</summary><p class="muted">Certificate included. We help you build a portfolio and a sellable offer (UGC/VTuber/Junior ML).</p></details>
     </div>
@@ -502,7 +516,7 @@
           <textarea id="f-notes" name="notes" placeholder="Any useful info (schedule, needs…)."></textarea>
         </div>
       </form>
-      <div class="banner" style="margin-top:4px"><b>7-day guarantee</b> · <span id="beta-banner">Beta promo active</span> · Limited seats</div>
+      <div class="banner" style="margin-top:4px"><b>7‑day guarantee</b> · <span id="beta-banner">Beta promo active</span> · Limited seats</div>
     </main>
     <footer>
       <button type="button" class="btn btn-whatsapp" id="sendWA">Send to WhatsApp</button>
@@ -513,18 +527,12 @@
   <div class="toast" id="toast">WhatsApp link opened in a new tab.</div>
 
   <script>
-    /* =============================
-      QUICK CONFIG
-      - Change COHORT_ISO_DATE for the cohort start date.
-      - Set WHATSAPP_NUMBER to your business number (no + or spaces).
-      - Set PROGRAM_PDF_HREF to your program PDF.
-      - Toggle BETA_ACTIVE and set BETA_DISCOUNT to enable/disable the beta promo.
-    ============================== */
-    const COHORT_ISO_DATE = '2025-09-02';
-    const WHATSAPP_NUMBER = '237695517054'; // international format, no + or spaces
+    /* Quick config */
+    const COHORT_ISO_DATE = '2025-10-02';
+    const WHATSAPP_NUMBER = '237695517054';
     const PROGRAM_PDF_HREF = '/docs/AI_Training_Program_EN.pdf';
     const BETA_ACTIVE   = true;
-    const BETA_DISCOUNT = 0.40; // 40%
+    const BETA_DISCOUNT = 0.40;
     const BETA_PLACES   = 12;
 
     const fmtPrice = (x)=> new Intl.NumberFormat('fr-FR').format(Math.round(x)) + ' FCFA';
@@ -554,7 +562,7 @@
     const modeSelect = qs('#modeSelect');
 
     function recomputePrices(){
-      const pack = packSelect.value; // essentiel|pro|mentorat (ids kept for simplicity)
+      const pack = packSelect.value; // essentiel|pro|mentorat
       qsa('.program-card').forEach(card=>{
         const base = +card.dataset.base;
         const upPro = +(card.dataset.proUp||0);
@@ -643,7 +651,7 @@
 
     // CTA actions
     qs('#cta-call').addEventListener('click', ()=>{
-      const msg = `Hello 👋 I’d like a 10-minute discovery call to choose the right program (cohort ${cohortText}).`;
+      const msg = `Hello 👋 I’d like a 10‑minute discovery call to choose the right program (cohort ${cohortText}).`;
       openWhatsApp(msg);
     });
 
@@ -672,22 +680,22 @@
         alert('Full name and the learner’s WhatsApp number are required.');
         return;
       }
-      const message = `New reservation – ${v('#f-program')}\n`+
-        `Bundle: ${qs('#f-pack').value}\n`+
-        `Amount: ${v('#f-prix')}\n`+
-        `Plan: ${qs('#f-plan').value}\n`+
-        `Cohort: ${v('#f-cohorte')}\n`+
-        `Name: ${v('#f-nom')}\n`+
-        `Learner WhatsApp: ${v('#f-whatsapp')}\n`+
-        `City: ${v('#f-ville') || '-'}\n`+
-        `Payment: ${qs('#f-mode').value}\n`+
-        `Notes: ${v('#f-notes') || '-'}\n`+
-        `Source: Website`;
+      const message = `New reservation – ${v('#f-program')}`+"\n"
+        +`Bundle: ${qs('#f-pack').value}`+"\n"
+        +`Amount: ${v('#f-prix')}`+"\n"
+        +`Plan: ${qs('#f-plan').value}`+"\n"
+        +`Cohort: ${v('#f-cohorte')}`+"\n"
+        +`Name: ${v('#f-nom')}`+"\n"
+        +`Learner WhatsApp: ${v('#f-whatsapp')}`+"\n"
+        +`City: ${v('#f-ville') || '-'}`+"\n"
+        +`Payment: ${qs('#f-mode').value}`+"\n"
+        +`Notes: ${v('#f-notes') || '-'}`+"\n"
+        +`Source: Website`;
       openWhatsApp(message) && closeDrawer();
     });
 
     // PDF CTA also opens WA (lead + download)
-    qs('#cta-pdf').addEventListener('click', ()=>{
+    qs('#cta-pdf').addEventListener('click', (e)=>{
       const msg = `Hello 👋 I’m downloading the Program PDF + trial lesson. Please add me to the info group for the ${cohortText} cohort.`;
       openWhatsApp(msg);
     });
